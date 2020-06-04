@@ -35,6 +35,7 @@
 		E8DCCDE22488635D00513C69 /* TTNorms-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDDB2488635D00513C69 /* TTNorms-Regular.otf */; };
 		E8DCCDE32488635D00513C69 /* TTNorms-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDDC2488635D00513C69 /* TTNorms-BoldItalic.otf */; };
 		E8DCCDE52488685E00513C69 /* TTNorms-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDE42488685E00513C69 /* TTNorms-Medium.otf */; };
+		E8F7B02624895C56002C4121 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7B02524895C56002C4121 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		E8DCCDDB2488635D00513C69 /* TTNorms-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Regular.otf"; sourceTree = "<group>"; };
 		E8DCCDDC2488635D00513C69 /* TTNorms-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-BoldItalic.otf"; sourceTree = "<group>"; };
 		E8DCCDE42488685E00513C69 /* TTNorms-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Medium.otf"; sourceTree = "<group>"; };
+		E8F7B02524895C56002C4121 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E8DCCDC724877EE400513C69 /* Category.swift */,
+				E8F7B02524895C56002C4121 /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
 				E8DCCDCE248788B600513C69 /* FeaturedCollectionCell.swift in Sources */,
 				E8DCCDCA2487821C00513C69 /* FliterCollectionCell.swift in Sources */,
+				E8F7B02624895C56002C4121 /* Restaurant.swift in Sources */,
 				E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */,
 				E8DCCDD0248788C800513C69 /* FeaturedCell.swift in Sources */,
 				E8DCCDC62486E5FA00513C69 /* CategoryCell.swift in Sources */,
