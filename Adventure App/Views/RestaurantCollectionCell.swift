@@ -11,17 +11,17 @@ import UIKit
 class RestaurantCollectionCell: BaseCollectionCell {
     
     let destinationCell = "destinationCell"
-    let categories = [
-        Category(imageName: "mcard1", title: "Hiking"),
-        Category(imageName: "mcard2", title: "Diving"),
-        Category(imageName: "mcard3", title: "Ski"),
-        Category(imageName: "mcard4", title: "Skate")
+    let restaurants = [
+       Restuarant(imageName: "pizzas", name: "Eataly", feature: "20 min - Free delivery"),
+       Restuarant(imageName: "burgers", name: "Sam's Crispy Chicken", feature: "20 min - Free delivery"),
+       Restuarant(imageName: "Bakery", name: "Dominique Ansel Bakery", feature: "20 min - Free delivery"),
+       Restuarant(imageName: "sticky-finger", name: "Sticky's  Finger Joint", feature: "20 min - Free delivery")
     ]
     
     let foodLabel: UILabel = {
        let label = UILabel()
         label.text = "National Favorites"
-        label.font = UIFont(name: "TTNorms-Bold", size: 25)
+        label.font = UIFont(name: "TTNorms-Bold", size: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
@@ -30,20 +30,24 @@ class RestaurantCollectionCell: BaseCollectionCell {
     let allButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("See All", for: .normal)
+        button.tintColor = UIColor(named: "red")
         button.contentHorizontalAlignment = .right
- 
+        button.titleLabel?.font = UIFont(name: "TTNorms-Regular", size: 16)
         return button
     }()
     
     let horizontalStack: UIStackView = {
        let stack = UIStackView()
         stack.axis = .horizontal
+        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
     override func setupViews() {
         super.setupViews()
+        
+        contentView.backgroundColor = .white
         
         addSubview(horizontalStack)
         addSubview(collectionView)
@@ -58,20 +62,13 @@ class RestaurantCollectionCell: BaseCollectionCell {
             
             horizontalStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             horizontalStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            horizontalStack.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10),
+            horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            horizontalStack.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0),
             
             collectionView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
                     collectionView.rightAnchor.constraint(equalTo: rightAnchor),
                     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-                    
-//
-//            verticalStackView.topAnchor.constraint(equalTo: topAnchor),
-//            verticalStackView.leftAnchor.constraint(equalTo: leftAnchor),
-//            verticalStackView.rightAnchor.constraint(equalTo: rightAnchor),
-//            verticalStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
         ])
     }
     
@@ -80,16 +77,17 @@ class RestaurantCollectionCell: BaseCollectionCell {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return restaurants.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: destinationCell, for: indexPath) as! RestaurantCell
+        cell.restaurant = restaurants[indexPath.item]
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / 1.3, height: frame.height)
+        return CGSize(width: frame.width / 1.4, height: frame.height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -16,6 +16,7 @@ class FilterCollectionCell: BaseCollectionCell {
     
     override func setupViews() {
         super.setupViews()
+        contentView.backgroundColor = .white
     }
     
     override func registerClass() {

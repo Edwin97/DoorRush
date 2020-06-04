@@ -39,7 +39,7 @@ class ActivityController: UIViewController {
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = UIColor(named: "grey-light")
         
         collectionView?.delegate = self
         collectionView?.dataSource = self
@@ -56,6 +56,7 @@ class ActivityController: UIViewController {
         
         titleLabel.text = "Delivering to".uppercased()
         titleLabel.font = UIFont(name: "TTNorms-Bold", size: 10)
+        titleLabel.textColor = UIColor(named: "red")
         
         locationButton.setTitle("Pie Guys Of New York", for: .normal)
         locationButton.setTitleColor(.black, for: .normal)
@@ -115,12 +116,16 @@ extension ActivityController: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.item == 0 {
             return CGSize(width: collectionView.frame.width, height: 120)
         } else if indexPath.item == 1 {
-              return CGSize(width: collectionView.frame.width, height: 50)
+              return CGSize(width: collectionView.frame.width, height: 80)
         } else if indexPath.item == 2 {
              return CGSize(width: collectionView.frame.width, height: 170)
         }
 
-        return CGSize(width: collectionView.frame.width, height: 280)
+        return CGSize(width: collectionView.frame.width, height: 300)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
 
