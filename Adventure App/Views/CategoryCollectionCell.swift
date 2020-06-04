@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryCollectionCell: BaseCollectionCell {
     
+    var activityController: ActivityController?
+    
     let categoryCell = "categoryCell"
     let categories = [
         Category(imageName: "burger", title: "Burger"),
@@ -46,4 +48,5 @@ class CategoryCollectionCell: BaseCollectionCell {
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
     }
+    
 }

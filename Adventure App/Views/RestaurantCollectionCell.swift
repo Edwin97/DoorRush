@@ -67,8 +67,8 @@ class RestaurantCollectionCell: BaseCollectionCell {
             
             collectionView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
-                    collectionView.rightAnchor.constraint(equalTo: rightAnchor),
-                    collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     

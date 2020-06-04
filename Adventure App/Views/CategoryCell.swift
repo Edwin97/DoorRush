@@ -17,6 +17,18 @@ class CategoryCell: BaseCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                categoryImage.image = UIImage(named: "\(category!.imageName)-tap")
+                titleLabel.textColor = UIColor(named: "red")
+            } else {
+                categoryImage.image = UIImage(named: category!.imageName)
+                titleLabel.textColor = UIColor(named: "grey")
+            }
+        }
+    }
+    
     let categoryImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
