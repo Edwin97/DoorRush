@@ -16,6 +16,25 @@
 		E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB92486D06100513C69 /* OrderController.swift */; };
 		E8DCCDBC2486D07000513C69 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBB2486D07000513C69 /* SettingController.swift */; };
 		E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */; };
+		E8DCCDC02486E13300513C69 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBF2486E13300513C69 /* BaseCollectionCell.swift */; };
+		E8DCCDC22486E56700513C69 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDC12486E56700513C69 /* BaseCell.swift */; };
+		E8DCCDC42486E5E700513C69 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDC32486E5E700513C69 /* CategoryCollectionCell.swift */; };
+		E8DCCDC62486E5FA00513C69 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDC52486E5FA00513C69 /* CategoryCell.swift */; };
+		E8DCCDC824877EE400513C69 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDC724877EE400513C69 /* Category.swift */; };
+		E8DCCDCA2487821C00513C69 /* FliterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDC92487821C00513C69 /* FliterCollectionCell.swift */; };
+		E8DCCDCC2487822A00513C69 /* FliterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDCB2487822A00513C69 /* FliterCell.swift */; };
+		E8DCCDCE248788B600513C69 /* FeaturedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDCD248788B600513C69 /* FeaturedCollectionCell.swift */; };
+		E8DCCDD0248788C800513C69 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDCF248788C800513C69 /* FeaturedCell.swift */; };
+		E8DCCDD2248788DE00513C69 /* RestaurantCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDD1248788DE00513C69 /* RestaurantCollectionCell.swift */; };
+		E8DCCDD4248788EB00513C69 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDD3248788EB00513C69 /* RestaurantCell.swift */; };
+		E8DCCDDD2488635D00513C69 /* TTNorms-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDD62488635D00513C69 /* TTNorms-Italic.otf */; };
+		E8DCCDDE2488635D00513C69 /* TTNorms-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDD72488635D00513C69 /* TTNorms-Bold.otf */; };
+		E8DCCDDF2488635D00513C69 /* TTNorms-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDD82488635D00513C69 /* TTNorms-Black.otf */; };
+		E8DCCDE02488635D00513C69 /* TTNorms-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDD92488635D00513C69 /* TTNorms-BlackItalic.otf */; };
+		E8DCCDE12488635D00513C69 /* TTNorms-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDDA2488635D00513C69 /* TTNorms-Light.otf */; };
+		E8DCCDE22488635D00513C69 /* TTNorms-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDDB2488635D00513C69 /* TTNorms-Regular.otf */; };
+		E8DCCDE32488635D00513C69 /* TTNorms-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDDC2488635D00513C69 /* TTNorms-BoldItalic.otf */; };
+		E8DCCDE52488685E00513C69 /* TTNorms-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8DCCDE42488685E00513C69 /* TTNorms-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +49,25 @@
 		E8DCCDB92486D06100513C69 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		E8DCCDBB2486D07000513C69 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E8DCCDBF2486E13300513C69 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
+		E8DCCDC12486E56700513C69 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		E8DCCDC32486E5E700513C69 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		E8DCCDC52486E5FA00513C69 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		E8DCCDC724877EE400513C69 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E8DCCDC92487821C00513C69 /* FliterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FliterCollectionCell.swift; sourceTree = "<group>"; };
+		E8DCCDCB2487822A00513C69 /* FliterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FliterCell.swift; sourceTree = "<group>"; };
+		E8DCCDCD248788B600513C69 /* FeaturedCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionCell.swift; sourceTree = "<group>"; };
+		E8DCCDCF248788C800513C69 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		E8DCCDD1248788DE00513C69 /* RestaurantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionCell.swift; sourceTree = "<group>"; };
+		E8DCCDD3248788EB00513C69 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		E8DCCDD62488635D00513C69 /* TTNorms-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Italic.otf"; sourceTree = "<group>"; };
+		E8DCCDD72488635D00513C69 /* TTNorms-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Bold.otf"; sourceTree = "<group>"; };
+		E8DCCDD82488635D00513C69 /* TTNorms-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Black.otf"; sourceTree = "<group>"; };
+		E8DCCDD92488635D00513C69 /* TTNorms-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-BlackItalic.otf"; sourceTree = "<group>"; };
+		E8DCCDDA2488635D00513C69 /* TTNorms-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Light.otf"; sourceTree = "<group>"; };
+		E8DCCDDB2488635D00513C69 /* TTNorms-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Regular.otf"; sourceTree = "<group>"; };
+		E8DCCDDC2488635D00513C69 /* TTNorms-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-BoldItalic.otf"; sourceTree = "<group>"; };
+		E8DCCDE42488685E00513C69 /* TTNorms-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +100,7 @@
 		E8527C7F2486C27D007587E7 /* Adventure App */ = {
 			isa = PBXGroup;
 			children = (
+				E8DCCDD52488634600513C69 /* Font */,
 				E8527C982486CF4E007587E7 /* Views */,
 				E8527C972486CF48007587E7 /* Controllers */,
 				E8527C962486CF42007587E7 /* Models */,
@@ -77,6 +116,7 @@
 		E8527C962486CF42007587E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8DCCDC724877EE400513C69 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,8 +136,33 @@
 		E8527C982486CF4E007587E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8DCCDBF2486E13300513C69 /* BaseCollectionCell.swift */,
+				E8DCCDC12486E56700513C69 /* BaseCell.swift */,
+				E8DCCDC32486E5E700513C69 /* CategoryCollectionCell.swift */,
+				E8DCCDC52486E5FA00513C69 /* CategoryCell.swift */,
+				E8DCCDC92487821C00513C69 /* FliterCollectionCell.swift */,
+				E8DCCDCB2487822A00513C69 /* FliterCell.swift */,
+				E8DCCDCD248788B600513C69 /* FeaturedCollectionCell.swift */,
+				E8DCCDCF248788C800513C69 /* FeaturedCell.swift */,
+				E8DCCDD1248788DE00513C69 /* RestaurantCollectionCell.swift */,
+				E8DCCDD3248788EB00513C69 /* RestaurantCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E8DCCDD52488634600513C69 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E8DCCDD82488635D00513C69 /* TTNorms-Black.otf */,
+				E8DCCDD92488635D00513C69 /* TTNorms-BlackItalic.otf */,
+				E8DCCDD72488635D00513C69 /* TTNorms-Bold.otf */,
+				E8DCCDDC2488635D00513C69 /* TTNorms-BoldItalic.otf */,
+				E8DCCDD62488635D00513C69 /* TTNorms-Italic.otf */,
+				E8DCCDE42488685E00513C69 /* TTNorms-Medium.otf */,
+				E8DCCDDA2488635D00513C69 /* TTNorms-Light.otf */,
+				E8DCCDDB2488635D00513C69 /* TTNorms-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +223,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DCCDE22488635D00513C69 /* TTNorms-Regular.otf in Resources */,
+				E8DCCDDE2488635D00513C69 /* TTNorms-Bold.otf in Resources */,
 				E8527C8D2486C280007587E7 /* LaunchScreen.storyboard in Resources */,
+				E8DCCDDF2488635D00513C69 /* TTNorms-Black.otf in Resources */,
+				E8DCCDE32488635D00513C69 /* TTNorms-BoldItalic.otf in Resources */,
+				E8DCCDE02488635D00513C69 /* TTNorms-BlackItalic.otf in Resources */,
 				E8527C8A2486C280007587E7 /* Assets.xcassets in Resources */,
+				E8DCCDDD2488635D00513C69 /* TTNorms-Italic.otf in Resources */,
+				E8DCCDE52488685E00513C69 /* TTNorms-Medium.otf in Resources */,
+				E8DCCDE12488635D00513C69 /* TTNorms-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,11 +245,22 @@
 			files = (
 				E8DCCDBC2486D07000513C69 /* SettingController.swift in Sources */,
 				E8527C852486C27D007587E7 /* ActivityController.swift in Sources */,
+				E8DCCDC02486E13300513C69 /* BaseCollectionCell.swift in Sources */,
+				E8DCCDCC2487822A00513C69 /* FliterCell.swift in Sources */,
 				E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */,
+				E8DCCDC22486E56700513C69 /* BaseCell.swift in Sources */,
+				E8DCCDD4248788EB00513C69 /* RestaurantCell.swift in Sources */,
+				E8DCCDC42486E5E700513C69 /* CategoryCollectionCell.swift in Sources */,
 				E8DCCDB82486D04A00513C69 /* ExploreController.swift in Sources */,
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,
+				E8DCCDD2248788DE00513C69 /* RestaurantCollectionCell.swift in Sources */,
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
+				E8DCCDCE248788B600513C69 /* FeaturedCollectionCell.swift in Sources */,
+				E8DCCDCA2487821C00513C69 /* FliterCollectionCell.swift in Sources */,
 				E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */,
+				E8DCCDD0248788C800513C69 /* FeaturedCell.swift in Sources */,
+				E8DCCDC62486E5FA00513C69 /* CategoryCell.swift in Sources */,
+				E8DCCDC824877EE400513C69 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
