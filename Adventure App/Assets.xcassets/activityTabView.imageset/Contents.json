@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-dining-room-32.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-dining-room-48 (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-bill-32 (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-invoice-48.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

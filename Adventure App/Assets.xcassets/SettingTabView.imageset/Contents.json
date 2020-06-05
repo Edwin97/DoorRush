@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-male-user-32.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-male-user-48.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
