@@ -48,8 +48,8 @@ class ActivityController: UIViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Find Activity"
-        navigationController?.navigationBar.barTintColor = .white
+        self.navigationItem.title = "Find Activity"
+        self.navigationController?.navigationBar.barTintColor = .white
         
         let titleLabel = UILabel()
         let locationButton = UIButton()
@@ -67,8 +67,9 @@ class ActivityController: UIViewController {
         
         
         
-        if let arrowDown = UIImage(systemName: "chevron.down")?.withTintColor(.systemRed, renderingMode: .alwaysTemplate) {
+        if let arrowDown = UIImage(systemName: "chevron.down")?.withRenderingMode(.alwaysTemplate){
           locationButton.setImage(arrowDown, for: .normal)
+            locationButton.tintColor = UIColor(named: "red")
         }
         
         locationButton.imageView?.contentMode = .scaleAspectFit
