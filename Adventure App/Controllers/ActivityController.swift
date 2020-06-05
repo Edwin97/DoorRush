@@ -64,9 +64,16 @@ class ActivityController: UIViewController {
         locationButton.titleLabel?.font = UIFont(name: "TTNorms-Medium", size: 18)
         locationButton.addTarget(self, action: #selector(setLocation), for: .touchUpInside)
         locationButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        
+        
+        
         if let arrowDown = UIImage(systemName: "chevron.down")?.withTintColor(.systemRed, renderingMode: .alwaysTemplate) {
           locationButton.setImage(arrowDown, for: .normal)
         }
+        
+        locationButton.imageView?.contentMode = .scaleAspectFit
+          locationButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -10)
+        
         locationButton.semanticContentAttribute = .forceRightToLeft
         
         let horizontalStackView = UIStackView(arrangedSubviews: [titleLabel, locationButton])

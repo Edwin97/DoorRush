@@ -11,7 +11,7 @@ import UIKit
 class FilterCollectionCell: BaseCollectionCell {
     
     let filterCell = "filterCell"
-    let filters = ["Popular", "Over 4.5 | >", "Under 30 min", "Vegetarian", "$, $$ | >"
+    let filters = ["Over 4.5 \u{f005} | \u{f107}", "Under 30 min", "Vegetarian", "$, $$ | \u{f107}"
     ]
     
     override func setupViews() {

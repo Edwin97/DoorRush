@@ -25,8 +25,14 @@ class FilterCell: BaseCell {
         button.titleLabel?.font = UIFont(name: "TTNorms-Regular", size: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
+        button.addTarget(self, action: #selector(enableFilter), for: .touchUpInside)
         return button
     }()
+    
+    @objc func enableFilter() {
+        filterButton.setTitleColor(.black, for: .selected)
+        filterButton.setTitleColor(.white, for: .selected)
+    }
     
     override func setupViews() {
         super.setupViews()

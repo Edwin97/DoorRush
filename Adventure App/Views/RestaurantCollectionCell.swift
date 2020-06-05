@@ -12,10 +12,10 @@ class RestaurantCollectionCell: BaseCollectionCell {
     
     let destinationCell = "destinationCell"
     let restaurants = [
-       Restuarant(imageName: "pizzas", name: "Eataly", feature: "20 min - Free delivery"),
-       Restuarant(imageName: "burgers", name: "Sam's Crispy Chicken", feature: "20 min - Free delivery"),
-       Restuarant(imageName: "Bakery", name: "Dominique Ansel Bakery", feature: "20 min - Free delivery"),
-       Restuarant(imageName: "sticky-finger", name: "Sticky's  Finger Joint", feature: "20 min - Free delivery")
+       Restuarant(imageName: "pizzas", name: "Eataly", feature: "20 min · Free delivery"),
+       Restuarant(imageName: "burgers", name: "Sam's Crispy Chicken", feature: "20 min · Free delivery"),
+       Restuarant(imageName: "Bakery", name: "Dominique Ansel Bakery", feature: "20 min ·  Free delivery"),
+       Restuarant(imageName: "sticky-finger", name: "Sticky's  Finger Joint", feature: "20 min ·  Free delivery")
     ]
     
     let foodLabel: UILabel = {

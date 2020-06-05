@@ -23,15 +23,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         customTabBarFont()
         
         tabBar.barTintColor = .white
-        tabBar.tintColor = UIColor(named: "orange")
+        tabBar.tintColor = UIColor(named: "red")
         
         
     }
     
     func customTabBarFont() {
         let appearance = UITabBarItem.appearance()
-        appearance.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "TTNorms-Regular", size: 18)!], for: .normal)
-        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "grey")!], for: .normal)
+        appearance.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "TTNorms-Medium", size: 14)!], for: .normal)
+//        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "grey")!], for: .normal)
         appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemRed], for: .selected)
     }
     
