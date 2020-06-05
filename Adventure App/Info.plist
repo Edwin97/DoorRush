@@ -58,11 +58,7 @@
 	<string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>TTNorms-Black.otf</string>
-		<string>TTNorms-BlackItalic.otf</string>
 		<string>TTNorms-Bold.otf</string>
-		<string>TTNorms-BoldItalic.otf</string>
-		<string>TTNorms-Italic.otf</string>
 		<string>TTNorms-Light.otf</string>
 		<string>TTNorms-Regular.otf</string>
 		<string>TTNorms-Medium.otf</string>
