@@ -114,11 +114,24 @@ class OnboardingController: UIViewController {
     @objc func toSignIn() {
         let viewController = SignInController()
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated:true, completion:nil)
+         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func toSignUp() {
+        let viewController = SignUpController()
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

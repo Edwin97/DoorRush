@@ -9,7 +9,7 @@
 import UIKit
 
 class SignInController: UIViewController {
-    
+        
     let emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email Address"
@@ -69,7 +69,7 @@ class SignInController: UIViewController {
     
     let divideLabel: UILabel = {
         let label = UILabel()
-        label.text = "- OR -"
+        label.text = "or continue with email"
         label.font = UIFont.medium(ofSize: 16)
         label.textAlignment = .center
         label.textColor = UIColor(named: "grey")
@@ -122,19 +122,18 @@ class SignInController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(stackView)
         
+        stackView.addArrangedSubview(googleButton)
+        stackView.addArrangedSubview(facebookButton)
+        stackView.addArrangedSubview(divideLabel)
         stackView.addArrangedSubview(emailLabel)
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordLabel)
         stackView.addArrangedSubview(passwordTexField)
         stackView.addArrangedSubview(signInButton)
         stackView.addArrangedSubview(forgotButton)
-        stackView.addArrangedSubview(divideLabel)
-        
-        stackView.addArrangedSubview(googleButton)
-        stackView.addArrangedSubview(facebookButton)
         
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
         ])
@@ -146,8 +145,5 @@ class SignInController: UIViewController {
     }
     
     @objc func onSignIn() {
-        let viewController = TabBarController()
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
     }
 }
