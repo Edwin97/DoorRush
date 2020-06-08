@@ -10,7 +10,9 @@ import UIKit
 
 class AccountController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let accountCell = "accountCell"
+    let accountDescriptionCell = "accountDescriptionCell"
+    let accountBasicCell = "accountBasicCell"
+    let accountHeaderCell = "accountHeaderCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +24,38 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func registerCell() {
-        collectionView.register(AccountCell.self, forCellWithReuseIdentifier: accountCell)
+        collectionView.register(AccountDescriptionCell.self, forCellWithReuseIdentifier: accountDescriptionCell)
+        collectionView.register(AccountBasicCell.self, forCellWithReuseIdentifier: accountBasicCell)
+        collectionView.register(AccountHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return AccountSection.allCases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 80)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell, for: indexPath) as! AccountHeaderCell
+        headerView.headerLabel.text = AccountSection(rawValue: indexPath.section)?.description
+          return headerView
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let section = AccountSection(rawValue: section) else {
+            return 0
+        }
+        
+        switch section {
+        case .account:
+            return AccountOption.allCases.count
+        case .notification:
+            return NotificationOption.allCases.count
+        case .more:
+            return MoreOption.allCases.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -38,72 +63,24 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: accountCell, for: indexPath) as! AccountCell
-        return cell
-    }
-    
-}
-
-class AccountCell: UICollectionViewCell {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.medium(ofSize: 16)
-        label.text = "Edwin Chan"
-        return label
-    }()
-    
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.regular(ofSize: 14)
-        label.text = "Change your account information"
-        return label
-    }()
-    
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    let separatorView: UIView = {
-        let view = UIView()
-        view.layer.borderWidth = 0.6
-        view.layer.borderColor = UIColor(named: "grey-light")?.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        return view
-    }()
-    
-    func setupViews() {
-        addSubview(stackView)
-        addSubview(separatorView)
+         let basicCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountBasicCell, for: indexPath) as! AccountBasicCell
+        let descriptionCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountDescriptionCell, for: indexPath) as! AccountDescriptionCell
         
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
+        guard let section = AccountSection(rawValue: indexPath.section) else {
+            return UICollectionViewCell()
+        }
         
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -16),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            
-            separatorView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
-            
-            separatorView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            separatorView.rightAnchor.constraint(equalTo: rightAnchor),
-            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
+        switch section {
+        case .account:
+            descriptionCell.titleLabel.text = AccountOption(rawValue: indexPath.row)?.description
+            return descriptionCell
+        case .notification:
+            basicCell.titleLabel.text = NotificationOption(rawValue: indexPath.row)?.description
+             return basicCell
+        case .more:
+            basicCell.titleLabel.text = MoreOption(rawValue: indexPath.row)?.description
+             return basicCell
+        }
     }
+    
 }

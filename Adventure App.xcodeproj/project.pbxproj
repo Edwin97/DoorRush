@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E830DD2F248E6C0500D76511 /* AccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD2E248E6C0500D76511 /* AccountSection.swift */; };
+		E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */; };
+		E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */; };
+		E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD34248E81BB00D76511 /* AccountBasicCell.swift */; };
 		E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C802486C27D007587E7 /* AppDelegate.swift */; };
 		E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C822486C27D007587E7 /* SceneDelegate.swift */; };
 		E8527C852486C27D007587E7 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C842486C27D007587E7 /* ActivityController.swift */; };
@@ -41,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E830DD2E248E6C0500D76511 /* AccountSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSection.swift; sourceTree = "<group>"; };
+		E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderCell.swift; sourceTree = "<group>"; };
+		E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionCell.swift; sourceTree = "<group>"; };
+		E830DD34248E81BB00D76511 /* AccountBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBasicCell.swift; sourceTree = "<group>"; };
 		E8527C7D2486C27D007587E7 /* Adventure App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adventure App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8527C802486C27D007587E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8527C822486C27D007587E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				E8DCCDC724877EE400513C69 /* Category.swift */,
 				E8F7B02524895C56002C4121 /* Restaurant.swift */,
 				E8585C6B248A501300467E4E /* Onboard.swift */,
+				E830DD2E248E6C0500D76511 /* AccountSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +170,9 @@
 				E8DCCDD1248788DE00513C69 /* RestaurantCollectionCell.swift */,
 				E8DCCDD3248788EB00513C69 /* RestaurantCell.swift */,
 				E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */,
+				E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */,
+				E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */,
+				E830DD34248E81BB00D76511 /* AccountBasicCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,8 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8585C6C248A501300467E4E /* Onboard.swift in Sources */,
+				E830DD2F248E6C0500D76511 /* AccountSection.swift in Sources */,
 				E8527C852486C27D007587E7 /* ActivityController.swift in Sources */,
 				E8DCCDC02486E13300513C69 /* BaseCollectionCell.swift in Sources */,
+				E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */,
+				E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */,
 				E8DCCDCC2487822A00513C69 /* FliterCell.swift in Sources */,
 				E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */,
 				E8DCCDC22486E56700513C69 /* BaseCell.swift in Sources */,
@@ -288,6 +303,7 @@
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,
 				E8DCCDD2248788DE00513C69 /* RestaurantCollectionCell.swift in Sources */,
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
+				E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */,
 				E8DCCDCE248788B600513C69 /* FeaturedCollectionCell.swift in Sources */,
 				E8DCCDCA2487821C00513C69 /* FliterCollectionCell.swift in Sources */,
 				E8F7B02624895C56002C4121 /* Restaurant.swift in Sources */,
