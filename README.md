@@ -8,9 +8,9 @@ A sample Food Delivery app
   </tr>
   <tr>
      <td><kbd> 
-       <img src="https://github.com/Edwin97/DoorRush/blob/master/Adventure%20App/Assets.xcassets/sreenshot2.imageset/sreenshot2.png" width="300"></kbd>
+       <img src="https://github.com/Edwin97/DoorRush/blob/master/DoorRush/Assets.xcassets/sreenshot2.imageset/sreenshot2.png" width="300"></kbd>
   </td>
     <td> <kbd> 
-  <img src="https://github.com/Edwin97/DoorRush/blob/master/Adventure%20App/Assets.xcassets/screenshot1.imageset/screenshot1.png" width="300"></kbd></td>
+  <img src="https://github.com/Edwin97/DoorRush/blob/master/DoorRush/Assets.xcassets/screenshot1.imageset/screenshot1.png" width="300"></kbd></td>
   </tr>
  </table>
