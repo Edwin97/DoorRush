@@ -220,6 +220,7 @@ class SignUpController: UIViewController {
         }
     }
     
+    // TODO fix 
     func pushTo(viewController: UIViewController) {
         viewController.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(viewController, animated: false)
