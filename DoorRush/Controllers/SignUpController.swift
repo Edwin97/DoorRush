@@ -154,6 +154,8 @@ class SignUpController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        setupPageSegment()
+        setupBarItems()
     }
     
     func setupViews() {
@@ -186,6 +188,41 @@ class SignUpController: UIViewController {
         stackView.setCustomSpacing(20, after: divideLabel)
     }
     
+    func setupBarItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
+    }
+    
     @objc func onSignIn() {
     }
+    
+    @objc func onSkip() {
+        
+    }
+    
+    func setupPageSegment() {
+        let items = ["Sign In", "Sign Up"]
+        let filtersSegment = UISegmentedControl(items: items)
+        filtersSegment.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
+        filtersSegment.selectedSegmentIndex = 1
+        filtersSegment.tintColor = UIColor.black
+        filtersSegment.addTarget(self, action: #selector(self.filterApply), for: UIControl.Event.valueChanged)
+        navigationItem.titleView = filtersSegment
+    }
+    
+    @objc private func filterApply(segment: UISegmentedControl) -> Void {
+        switch segment.selectedSegmentIndex {
+        case 0:
+            pushTo(viewController: SignInController())
+        case 1:
+            pushTo(viewController: SignUpController())
+        default:
+            onSignIn()
+        }
+    }
+    
+    func pushTo(viewController: UIViewController) {
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: false)
+    }
+    
 }
