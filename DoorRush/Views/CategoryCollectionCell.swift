@@ -49,4 +49,5 @@ class CategoryCollectionCell: BaseCollectionCell {
         return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
     }
     
+    
 }

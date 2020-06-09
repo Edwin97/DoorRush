@@ -145,5 +145,8 @@ class SignInController: UIViewController {
     }
     
     @objc func onSignIn() {
+        let viewController = TabBarController()
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
     }
 }
