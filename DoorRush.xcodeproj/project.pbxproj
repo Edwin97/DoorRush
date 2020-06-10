@@ -11,6 +11,7 @@
 		E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */; };
 		E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */; };
 		E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD34248E81BB00D76511 /* AccountBasicCell.swift */; };
+		E830DD3F248F86E400D76511 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD3E248F86E400D76511 /* MenuBar.swift */; };
 		E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C802486C27D007587E7 /* AppDelegate.swift */; };
 		E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C822486C27D007587E7 /* SceneDelegate.swift */; };
 		E8527C852486C27D007587E7 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C842486C27D007587E7 /* ActivityController.swift */; };
@@ -21,6 +22,7 @@
 		E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */; };
 		E8C7CCD8248A9B9000529A02 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD7248A9B9000529A02 /* SignInController.swift */; };
 		E8C7CCDA248A9BB300529A02 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD9248A9BB300529A02 /* SignUpController.swift */; };
+		E8D8BD932490F290005A8C8C /* AccountSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */; };
 		E8DCCDB82486D04A00513C69 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB72486D04A00513C69 /* ExploreController.swift */; };
 		E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB92486D06100513C69 /* OrderController.swift */; };
 		E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */; };
@@ -49,6 +51,7 @@
 		E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderCell.swift; sourceTree = "<group>"; };
 		E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionCell.swift; sourceTree = "<group>"; };
 		E830DD34248E81BB00D76511 /* AccountBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBasicCell.swift; sourceTree = "<group>"; };
+		E830DD3E248F86E400D76511 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuBar.swift; path = ../../../MenuBar.swift; sourceTree = "<group>"; };
 		E8527C7D2486C27D007587E7 /* DoorRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorRush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8527C802486C27D007587E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8527C822486C27D007587E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		E8C7CCD7248A9B9000529A02 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		E8C7CCD9248A9BB300529A02 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSwitchCell.swift; sourceTree = "<group>"; };
 		E8DCCDB72486D04A00513C69 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		E8DCCDB92486D06100513C69 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */,
 				E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */,
 				E830DD34248E81BB00D76511 /* AccountBasicCell.swift */,
+				E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */,
+				E830DD3E248F86E400D76511 /* MenuBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				E8DCCDC42486E5E700513C69 /* CategoryCollectionCell.swift in Sources */,
 				E8585C6A248A36F800467E4E /* OnboardingController.swift in Sources */,
 				E8E44E65248AC650007B7ABE /* AccountController.swift in Sources */,
+				E830DD3F248F86E400D76511 /* MenuBar.swift in Sources */,
 				E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */,
 				E8DCCDB82486D04A00513C69 /* ExploreController.swift in Sources */,
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,
@@ -305,6 +312,7 @@
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
 				E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */,
 				E8DCCDCE248788B600513C69 /* FeaturedCollectionCell.swift in Sources */,
+				E8D8BD932490F290005A8C8C /* AccountSwitchCell.swift in Sources */,
 				E8DCCDCA2487821C00513C69 /* FliterCollectionCell.swift in Sources */,
 				E8F7B02624895C56002C4121 /* Restaurant.swift in Sources */,
 				E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */,

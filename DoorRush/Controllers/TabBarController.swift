@@ -24,8 +24,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         tabBar.barTintColor = .white
         tabBar.tintColor = UIColor(named: "red")
-        
-        
     }
     
     func customTabBarFont() {
@@ -43,7 +41,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let exploreController =  UINavigationController(rootViewController: ExploreController())
         exploreController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "searchTabView"), tag: 0)
         
-        let orderController = UINavigationController(rootViewController: OrderController())
+        let orderController = UINavigationController(rootViewController: OrderController(collectionViewLayout: UICollectionViewFlowLayout()))
         orderController.tabBarItem = UITabBarItem(title: "Orders", image: UIImage(named: "orderTabView"), tag: 0)
         
         let accountController = UINavigationController(rootViewController: AccountController(collectionViewLayout: UICollectionViewFlowLayout()))

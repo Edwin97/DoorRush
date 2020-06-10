@@ -10,6 +10,7 @@ import UIKit
 
 class AccountController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let accountSwitchCell = "accountSwitchCell"
     let accountDescriptionCell = "accountDescriptionCell"
     let accountBasicCell = "accountBasicCell"
     let accountHeaderCell = "accountHeaderCell"
@@ -24,6 +25,7 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func registerCell() {
+        collectionView.register(AccountSwitchCell.self, forCellWithReuseIdentifier: accountSwitchCell)
         collectionView.register(AccountDescriptionCell.self, forCellWithReuseIdentifier: accountDescriptionCell)
         collectionView.register(AccountBasicCell.self, forCellWithReuseIdentifier: accountBasicCell)
         collectionView.register(AccountHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell)
@@ -63,8 +65,9 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let basicCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountBasicCell, for: indexPath) as! AccountBasicCell
+        let basicCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountBasicCell, for: indexPath) as! AccountBasicCell
         let descriptionCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountDescriptionCell, for: indexPath) as! AccountDescriptionCell
+        let switchCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountSwitchCell, for: indexPath) as! AccountSwitchCell
         
         guard let section = AccountSection(rawValue: indexPath.section) else {
             return UICollectionViewCell()
@@ -75,11 +78,11 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
             descriptionCell.titleLabel.text = AccountOption(rawValue: indexPath.row)?.description
             return descriptionCell
         case .notification:
-            basicCell.titleLabel.text = NotificationOption(rawValue: indexPath.row)?.description
-             return basicCell
+            switchCell.titleLabel.text = NotificationOption(rawValue: indexPath.row)?.description
+            return switchCell
         case .more:
             basicCell.titleLabel.text = MoreOption(rawValue: indexPath.row)?.description
-             return basicCell
+            return basicCell
         }
     }
     
