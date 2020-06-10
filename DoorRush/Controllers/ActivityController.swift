@@ -65,8 +65,6 @@ class ActivityController: UIViewController {
         locationButton.addTarget(self, action: #selector(setLocation), for: .touchUpInside)
         locationButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
-        
-        
         if let arrowDown = UIImage(systemName: "chevron.down")?.withRenderingMode(.alwaysTemplate){
           locationButton.setImage(arrowDown, for: .normal)
             locationButton.tintColor = UIColor(named: "red")

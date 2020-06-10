@@ -8,44 +8,30 @@
 
 import UIKit
 
-class OrderController: UICollectionViewController {
-
+class OrderController: UICollectionViewController, UICollectionViewDelegateFlowLayout
+{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .white
         
-        // remove shadow on navbar
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-        titleLabel.text = "  Orders"
-        titleLabel.textColor = .black
-        titleLabel.font = UIFont.bold(ofSize: 25)
-        navigationItem.titleView = titleLabel
+        navigationItem.title = "Orders"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         collectionView.backgroundColor = UIColor(named: "grey-light")
         
-        setupMenuBar()
+        collectionView.register(OrderCell.self, forCellWithReuseIdentifier: "OrderCell")
     }
     
-    let menuBar: MenuBar = {
-        let menuBar = MenuBar()
-        return menuBar
-    }()
-    
-    private func setupMenuBar() {
-        collectionView.addSubview(menuBar)
-        
-        NSLayoutConstraint.activate([
-            menuBar.heightAnchor.constraint(equalToConstant: 100),
-            menuBar.leftAnchor.constraint(equalTo: view.leftAnchor),
-            menuBar.leftAnchor.constraint(equalTo: view.rightAnchor),
-            menuBar.topAnchor.constraint(equalTo: view.topAnchor),
-        ])
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCell", for: indexPath) as! OrderCell
+        return cell
     }
     
-
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          return CGSize(width: collectionView.frame.width, height: 120)
+      }
 }

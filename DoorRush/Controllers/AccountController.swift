@@ -20,7 +20,6 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
         registerCell()
         navigationItem.title = "Account"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         collectionView.backgroundColor = .white
     }
     
@@ -36,10 +35,20 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        if section == 0 {
+            return CGSize.zero
+        }
+        
         return CGSize(width: collectionView.frame.width, height: 80)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if indexPath.item == 0 {
+            UICollectionReusableView()
+        }
+        
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell, for: indexPath) as! AccountHeaderCell
         headerView.headerLabel.text = AccountSection(rawValue: indexPath.section)?.description
           return headerView
@@ -86,4 +95,28 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.item == 1 {
+            logout()
+        }
+    }
+    
+    func logout() {
+        let actionSheetController: UIAlertController = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .actionSheet)
+
+        // create an action
+        let firstAction: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive) { action -> Void in
+            print("First Action pressed")
+        }
+
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+
+        // add actions
+        actionSheetController.addAction(firstAction)
+        actionSheetController.addAction(cancelAction)
+
+        present(actionSheetController, animated: true) {
+            print("option menu presented")
+        }
+    }
 }
