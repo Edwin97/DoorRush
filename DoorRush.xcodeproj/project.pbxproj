@@ -23,7 +23,8 @@
 		E8C7CCD8248A9B9000529A02 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD7248A9B9000529A02 /* SignInController.swift */; };
 		E8C7CCDA248A9BB300529A02 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD9248A9BB300529A02 /* SignUpController.swift */; };
 		E8D8BD932490F290005A8C8C /* AccountSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */; };
-		E8DCCDB82486D04A00513C69 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB72486D04A00513C69 /* ExploreController.swift */; };
+		E8D8BD9524912AE6005A8C8C /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8BD9424912AE6005A8C8C /* OrderCell.swift */; };
+		E8DCCDB82486D04A00513C69 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB72486D04A00513C69 /* SearchController.swift */; };
 		E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB92486D06100513C69 /* OrderController.swift */; };
 		E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */; };
 		E8DCCDC02486E13300513C69 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDBF2486E13300513C69 /* BaseCollectionCell.swift */; };
@@ -65,7 +66,8 @@
 		E8C7CCD7248A9B9000529A02 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		E8C7CCD9248A9BB300529A02 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSwitchCell.swift; sourceTree = "<group>"; };
-		E8DCCDB72486D04A00513C69 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		E8D8BD9424912AE6005A8C8C /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		E8DCCDB72486D04A00513C69 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		E8DCCDB92486D06100513C69 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E8DCCDBF2486E13300513C69 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
@@ -149,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E8527C842486C27D007587E7 /* ActivityController.swift */,
-				E8DCCDB72486D04A00513C69 /* ExploreController.swift */,
+				E8DCCDB72486D04A00513C69 /* SearchController.swift */,
 				E8DCCDB92486D06100513C69 /* OrderController.swift */,
 				E8DCCDBD2486D2EE00513C69 /* TabBarController.swift */,
 				E8585C69248A36F800467E4E /* OnboardingController.swift */,
@@ -179,6 +181,7 @@
 				E830DD34248E81BB00D76511 /* AccountBasicCell.swift */,
 				E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */,
 				E830DD3E248F86E400D76511 /* MenuBar.swift */,
+				E8D8BD9424912AE6005A8C8C /* OrderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				E8DCCDC02486E13300513C69 /* BaseCollectionCell.swift in Sources */,
 				E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */,
 				E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */,
+				E8D8BD9524912AE6005A8C8C /* OrderCell.swift in Sources */,
 				E8DCCDCC2487822A00513C69 /* FliterCell.swift in Sources */,
 				E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */,
 				E8DCCDC22486E56700513C69 /* BaseCell.swift in Sources */,
@@ -306,7 +310,7 @@
 				E8E44E65248AC650007B7ABE /* AccountController.swift in Sources */,
 				E830DD3F248F86E400D76511 /* MenuBar.swift in Sources */,
 				E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */,
-				E8DCCDB82486D04A00513C69 /* ExploreController.swift in Sources */,
+				E8DCCDB82486D04A00513C69 /* SearchController.swift in Sources */,
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,
 				E8DCCDD2248788DE00513C69 /* RestaurantCollectionCell.swift in Sources */,
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
