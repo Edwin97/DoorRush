@@ -37,11 +37,11 @@ class SearchController: UICollectionViewController, UICollectionViewDelegateFlow
     }
     
     func registerCell() {
-        collectionView.register(RestaurantCell.self, forCellWithReuseIdentifier: restaurantCell)
+        collectionView.register(SearchCell.self, forCellWithReuseIdentifier: restaurantCell)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCell, for: indexPath) as! RestaurantCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCell, for: indexPath) as! SearchCell
         cell.restaurant = restaurants[indexPath.item]
         return cell
     }
