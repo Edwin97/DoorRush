@@ -33,13 +33,15 @@ class RestaurantCollectionCell: BaseCollectionCell {
         button.tintColor = UIColor(named: "red")
         button.contentHorizontalAlignment = .right
         button.titleLabel?.font = UIFont(name: "TTNorms-Regular", size: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
         return button
     }()
     
     let horizontalStack: UIStackView = {
        let stack = UIStackView()
         stack.axis = .horizontal
-        stack.distribution = .fill
+        stack.distribution = .fillProportionally
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()

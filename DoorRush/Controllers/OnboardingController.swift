@@ -121,7 +121,6 @@ class OnboardingController: UIViewController {
         let viewController = SignUpController()
         viewController.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(viewController, animated: true)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,6 +153,7 @@ extension OnboardingController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
          let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
            pageControl.currentPage = Int(pageNumber)

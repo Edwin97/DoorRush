@@ -12,14 +12,16 @@ class FeaturedCell: BaseCell {
     
     var imageName: String? {
         didSet {
-            featuredImage.image = UIImage(named: imageName!)
+//            featuredImage.image = UIImage(named: imageName!)
+            featuredImage.image = UIImage(named: "featuredWork")
         }
     }
     
     let featuredImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .redraw
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -30,7 +32,6 @@ class FeaturedCell: BaseCell {
         
         featuredImage.widthAnchor.constraint(equalToConstant: contentView.frame.width).isActive = true
         featuredImage.heightAnchor.constraint(equalToConstant: contentView.frame.height).isActive = true
-//        featuredImage.image = UIImage(named: "featuredWork")
         
         NSLayoutConstraint.activate([
             featuredImage.topAnchor.constraint(equalTo: topAnchor),

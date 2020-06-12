@@ -196,7 +196,9 @@ class SignUpController: UIViewController {
     }
     
     @objc func onSkip() {
-        
+       let viewController = TabBarController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
     }
     
     func setupPageSegment() {

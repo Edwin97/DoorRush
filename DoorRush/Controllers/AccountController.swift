@@ -106,7 +106,10 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
 
         // create an action
         let firstAction: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive) { action -> Void in
-            print("First Action pressed")
+            
+            let viewController = UINavigationController(rootViewController: OnboardingController())
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
         }
 
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }

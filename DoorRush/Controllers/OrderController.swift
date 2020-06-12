@@ -17,7 +17,7 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
         navigationItem.title = "Orders"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        collectionView.backgroundColor = UIColor(named: "grey-light")
+        collectionView.backgroundColor = .white
         
         collectionView.register(OrderCell.self, forCellWithReuseIdentifier: "OrderCell")
     }
@@ -32,6 +32,12 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          return CGSize(width: collectionView.frame.width, height: 120)
-      }
+        return CGSize(width: collectionView.frame.width, height: 75)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    
 }
