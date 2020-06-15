@@ -60,6 +60,5 @@ extension UIViewController {
                 viewContoller.removeFromParent()
             }
         }
-        print(self.children.count)
     }
 }

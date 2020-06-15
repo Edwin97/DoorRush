@@ -189,7 +189,11 @@ class SignUpController: UIViewController {
     }
     
     func setupBarItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
+        self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = nil
     }
     
     @objc func onSignIn() {
