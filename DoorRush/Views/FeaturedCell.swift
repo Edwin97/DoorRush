@@ -12,8 +12,7 @@ class FeaturedCell: BaseCell {
     
     var imageName: String? {
         didSet {
-//            featuredImage.image = UIImage(named: imageName!)
-            featuredImage.image = UIImage(named: "featuredWork")
+            featuredImage.image = UIImage(named: imageName!)
         }
     }
     

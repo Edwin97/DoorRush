@@ -18,7 +18,6 @@ class OnboardingCell: UICollectionViewCell {
         }
     }
     
-    
     let onBoardImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "onBoard1")

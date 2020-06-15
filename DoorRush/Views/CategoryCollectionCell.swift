@@ -15,12 +15,12 @@ class CategoryCollectionCell: BaseCollectionCell {
     let categoryCell = "categoryCell"
     let categories = [
         Category(imageName: "burger", title: "Burger"),
-        Category(imageName: "french-fries", title: "Fast Food"),
         Category(imageName: "paella", title: "Paella"),
         Category(imageName: "pizza", title: "Pizza"),
+        Category(imageName: "vegan", title: "Vegan"),
         Category(imageName: "soup", title: "Soup"),
         Category(imageName: "spaghetti", title: "Spaghetti"),
-        Category(imageName: "vegan", title: "Vegan"),
+        Category(imageName: "french-fries", title: "Fast Food"),
     ]
     
     override func setupViews() {

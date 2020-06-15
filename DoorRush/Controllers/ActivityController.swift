@@ -124,7 +124,7 @@ extension ActivityController: UICollectionViewDataSource, UICollectionViewDelega
         } else if indexPath.item == 1 {
               return CGSize(width: collectionView.frame.width, height: 80)
         } else if indexPath.item == 2 {
-             return CGSize(width: collectionView.frame.width, height: 170)
+             return CGSize(width: collectionView.frame.width, height: 190)
         }
 
         return CGSize(width: collectionView.frame.width, height: 300)

@@ -103,7 +103,6 @@ class OnboardingController: UIViewController {
             collectionView.heightAnchor.constraint(equalToConstant: view.frame.height / 2),
             signInButton.heightAnchor.constraint(equalToConstant: 45),
             signUpButton.heightAnchor.constraint(equalToConstant: 45),
-            
         ])
     }
     
