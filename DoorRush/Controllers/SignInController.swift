@@ -158,9 +158,11 @@ class SignInController: UIViewController {
     @objc private func filterApply(segment: UISegmentedControl) -> Void {
         switch segment.selectedSegmentIndex {
         case 0:
-            pushTo(viewController: SignInController())
+            remove()
+            add(SignInController())
         case 1:
-            pushTo(viewController: SignUpController())
+            remove()
+            add(SignUpController())
         default:
             onSignIn()
         }
@@ -170,10 +172,5 @@ class SignInController: UIViewController {
         let viewController = TabBarController()
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
-    }
-        
-    func pushTo(viewController: UIViewController) {
-        viewController.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(viewController, animated: false)
     }
 }
