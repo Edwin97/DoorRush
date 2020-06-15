@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7EB8D76522227C53A6C1BC4 /* libPods-DoorRush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 746E01890C965F35C3661DCA /* libPods-DoorRush.a */; };
 		E830DD2F248E6C0500D76511 /* AccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD2E248E6C0500D76511 /* AccountSection.swift */; };
 		E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */; };
 		E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */; };
@@ -20,6 +21,7 @@
 		E8585C6A248A36F800467E4E /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8585C69248A36F800467E4E /* OnboardingController.swift */; };
 		E8585C6C248A501300467E4E /* Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8585C6B248A501300467E4E /* Onboard.swift */; };
 		E87E6155249270110078C73C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E6154249270110078C73C /* SearchCell.swift */; };
+		E87E615724939EA80078C73C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87E615624939EA80078C73C /* GoogleService-Info.plist */; };
 		E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */; };
 		E8C7CCD8248A9B9000529A02 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD7248A9B9000529A02 /* SignInController.swift */; };
 		E8C7CCDA248A9BB300529A02 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD9248A9BB300529A02 /* SignUpController.swift */; };
@@ -49,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419F568AAE02DF9D86EFE245 /* Pods-DoorRush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorRush.release.xcconfig"; path = "Target Support Files/Pods-DoorRush/Pods-DoorRush.release.xcconfig"; sourceTree = "<group>"; };
+		746E01890C965F35C3661DCA /* libPods-DoorRush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoorRush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D6CCC2B0E3339CB402431D /* Pods-DoorRush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorRush.debug.xcconfig"; path = "Target Support Files/Pods-DoorRush/Pods-DoorRush.debug.xcconfig"; sourceTree = "<group>"; };
 		E830DD2E248E6C0500D76511 /* AccountSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSection.swift; sourceTree = "<group>"; };
 		E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderCell.swift; sourceTree = "<group>"; };
 		E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionCell.swift; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		E8585C69248A36F800467E4E /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		E8585C6B248A501300467E4E /* Onboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard.swift; sourceTree = "<group>"; };
 		E87E6154249270110078C73C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		E87E615624939EA80078C73C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		E8C7CCD7248A9B9000529A02 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		E8C7CCD9248A9BB300529A02 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -97,17 +103,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EB8D76522227C53A6C1BC4 /* libPods-DoorRush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1395B40FB9B0C6BC978F1217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				746E01890C965F35C3661DCA /* libPods-DoorRush.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBEE605CAE3122BAAE8571C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5D6CCC2B0E3339CB402431D /* Pods-DoorRush.debug.xcconfig */,
+				419F568AAE02DF9D86EFE245 /* Pods-DoorRush.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E8527C742486C27D007587E7 = {
 			isa = PBXGroup;
 			children = (
 				E8527C7F2486C27D007587E7 /* DoorRush */,
 				E8527C7E2486C27D007587E7 /* Products */,
+				CBEE605CAE3122BAAE8571C3 /* Pods */,
+				1395B40FB9B0C6BC978F1217 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +159,7 @@
 				E8527C802486C27D007587E7 /* AppDelegate.swift */,
 				E8527C822486C27D007587E7 /* SceneDelegate.swift */,
 				E8527C8E2486C280007587E7 /* Info.plist */,
+				E87E615624939EA80078C73C /* GoogleService-Info.plist */,
 				E8527C8B2486C280007587E7 /* LaunchScreen.storyboard */,
 				E8527C892486C280007587E7 /* Assets.xcassets */,
 			);
@@ -229,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8527C912486C280007587E7 /* Build configuration list for PBXNativeTarget "DoorRush" */;
 			buildPhases = (
+				8B393B0DE2250FDB81BB0A7D /* [CP] Check Pods Manifest.lock */,
 				E8527C792486C27D007587E7 /* Sources */,
 				E8527C7A2486C27D007587E7 /* Frameworks */,
 				E8527C7B2486C27D007587E7 /* Resources */,
+				312C23733F3BEA197EEBF868 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,10 +316,53 @@
 				E8527C8A2486C280007587E7 /* Assets.xcassets in Resources */,
 				E8DCCDE52488685E00513C69 /* TTNorms-Medium.otf in Resources */,
 				E8DCCDE12488635D00513C69 /* TTNorms-Light.otf in Resources */,
+				E87E615724939EA80078C73C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		312C23733F3BEA197EEBF868 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoorRush/Pods-DoorRush-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoorRush/Pods-DoorRush-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DoorRush/Pods-DoorRush-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B393B0DE2250FDB81BB0A7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoorRush-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8527C792486C27D007587E7 /* Sources */ = {
@@ -462,6 +535,7 @@
 		};
 		E8527C922486C280007587E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D6CCC2B0E3339CB402431D /* Pods-DoorRush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edwin.Adventure-App";
+				PRODUCT_BUNDLE_IDENTIFIER = edwin.doorrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -480,6 +554,7 @@
 		};
 		E8527C932486C280007587E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419F568AAE02DF9D86EFE245 /* Pods-DoorRush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edwin.Adventure-App";
+				PRODUCT_BUNDLE_IDENTIFIER = edwin.doorrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

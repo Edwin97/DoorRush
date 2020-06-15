@@ -20,6 +20,13 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TTNorms-Bold.otf</string>
+		<string>TTNorms-Light.otf</string>
+		<string>TTNorms-Regular.otf</string>
+		<string>TTNorms-Medium.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,12 +63,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>TTNorms-Bold.otf</string>
-		<string>TTNorms-Light.otf</string>
-		<string>TTNorms-Regular.otf</string>
-		<string>TTNorms-Medium.otf</string>
-	</array>
 </dict>
 </plist>

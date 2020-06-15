@@ -43,3 +43,23 @@ extension UIFont {
         return UIFont(name: "TTNorms-Bold", size: size)!
     }
 }
+
+extension UIViewController {
+    func add(_ child: UIViewController) {
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+    
+    func remove() {
+        if self.children.count > 0 {
+            let viewControllers:[UIViewController] = self.children
+            for viewContoller in viewControllers{
+                viewContoller.willMove(toParent: nil)
+                viewContoller.view.removeFromSuperview()
+                viewContoller.removeFromParent()
+            }
+        }
+        print(self.children.count)
+    }
+}
