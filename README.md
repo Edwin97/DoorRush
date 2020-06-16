@@ -6,7 +6,7 @@
 
 DoorRush iOS App is developed by [Edwin Chan](https://twitter.com/EdwinChan97) and written in Swift 5.
 
-<h3 align="center">
+<h3>
 <kbd><img src="screenshot.gif" width="300" alt="Screenshot of DoorRush iOS App" /></kbd>
 </h3>
 
