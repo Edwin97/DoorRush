@@ -9,7 +9,7 @@ DoorRush iOS App is developed by [Edwin Chan](https://twitter.com/EdwinChan97) a
 Purpose of this repo is to show how ViewControllers can be managed.
 
 <h3 align="center">
-<img src="screenshot.gif" alt="Screenshot of DoorRush iOS App" />
+<kbd><img src="screenshot.gif" width="300" alt="Screenshot of DoorRush iOS App" /></kbd>
 </h3>
 
 # Installation
