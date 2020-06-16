@@ -1,4 +1,4 @@
-# AppStoreClone
+# DoorRush
 A sample Food Delivery app
 
 <table>
