@@ -9,42 +9,50 @@
 import UIKit
 
 class OrderCell: BaseCell {
+        
+    let orderLabel: UILabel = {
+        let title = UILabel()
+        title.font = UIFont.bold(ofSize: 16)
+        title.text = "ORD 16388-43"
+        return title
+    }()
     
-    let foodImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "meal")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        return imageView
+    let datetimeLabel: UILabel = {
+        let title = UILabel()
+        title.font = UIFont.regular(ofSize: 14)
+        title.text = "April 12, 18:31"
+        return title
     }()
     
     let restaurantLabel: UILabel = {
         let title = UILabel()
-        title.font = UIFont.bold(ofSize: 16)
-        title.text = "Snowflake - Sunway"
+        title.font = UIFont.regular(ofSize: 14)
+        title.text = "Shelby"
         return title
     }()
     
-    let itemLabel: UILabel = {
+    let priceLabel: UILabel = {
         let title = UILabel()
-        title.font = UIFont.regular(ofSize: 15)
-        title.text = "1 item - Bandar Puteri Puchong"
+        title.font = UIFont.medium(ofSize: 15)
+        title.text = "$9.90"
+        title.textAlignment = .right
         return title
     }()
     
-    let dateLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.regular(ofSize: 16)
-        title.text = "April 12, 18:31"
-        return title
+    let nextImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "arrow-right")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        return imageView
     }()
     
     let verticalStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 2
         return stackView
     }()
     
@@ -57,22 +65,36 @@ class OrderCell: BaseCell {
         return stackView
     }()
     
+    let separatorView: UIView = {
+        let view = UIView()
+        view.layer.borderWidth = 0.3
+        view.layer.borderColor = UIColor(named: "grey-default")?.cgColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        return view
+    }()
+    
     override func setupViews() {
-        contentView.backgroundColor = UIColor(named: "grey-light")
         
         addSubview(horizontalStack)
+        addSubview(separatorView)
         
+        verticalStack.addArrangedSubview(orderLabel)
+        verticalStack.addArrangedSubview(datetimeLabel)
         verticalStack.addArrangedSubview(restaurantLabel)
-        verticalStack.addArrangedSubview(itemLabel)
         
-        horizontalStack.addArrangedSubview(foodImageView)
         horizontalStack.addArrangedSubview(verticalStack)
-        horizontalStack.addArrangedSubview(dateLabel)
+        horizontalStack.addArrangedSubview(priceLabel)
+        horizontalStack.addArrangedSubview(nextImageView)
         
         NSLayoutConstraint.activate([
             horizontalStack.centerYAnchor.constraint(equalTo: centerYAnchor),
             horizontalStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             horizontalStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            
+            separatorView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            separatorView.rightAnchor.constraint(equalTo: rightAnchor),
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

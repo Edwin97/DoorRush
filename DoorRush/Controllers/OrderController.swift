@@ -8,9 +8,7 @@
 
 import UIKit
 
-class OrderController: UICollectionViewController, UICollectionViewDelegateFlowLayout
-{
-    
+class OrderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +34,6 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
-    
-    
 }

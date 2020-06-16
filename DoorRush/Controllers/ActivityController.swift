@@ -111,7 +111,7 @@ extension ActivityController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         if indexPath.item == 0 {
-            return CGSize(width: collectionView.frame.width, height: 120)
+            return CGSize(width: collectionView.frame.width, height: 105)
         } else if indexPath.item == 1 {
               return CGSize(width: collectionView.frame.width, height: 80)
         } else if indexPath.item == 2 {

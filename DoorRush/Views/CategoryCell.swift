@@ -35,8 +35,8 @@ class CategoryCell: BaseCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
         return imageView
     }()
     
@@ -51,9 +51,8 @@ class CategoryCell: BaseCell {
     let stackView: UIStackView = {
         let stackView =  UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 10
-//        stackView.distribution = .fillProportionally
-        
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -64,15 +63,11 @@ class CategoryCell: BaseCell {
         
         stackView.addArrangedSubview(categoryImage)
         stackView.addArrangedSubview(titleLabel)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackView.leftAnchor.constraint(equalTo: leftAnchor),
             stackView.rightAnchor.constraint(equalTo: rightAnchor),
-//            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-//            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
         ])
     }
 }
