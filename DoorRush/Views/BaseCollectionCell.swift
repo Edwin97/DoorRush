@@ -10,8 +10,6 @@ import UIKit
 
 class BaseCollectionCell: UICollectionViewCell, ReuseIdentifying {
     
-    let baseCell = "baseCell"
-    
     var leftConstraint: NSLayoutConstraint?
     var trailingConstraint: NSLayoutConstraint?
     var topConstraint: NSLayoutConstraint?
@@ -60,7 +58,7 @@ class BaseCollectionCell: UICollectionViewCell, ReuseIdentifying {
     }
     
     func registerClass() {
-        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: baseCell)
+        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: BaseCell.reuseIdentifier)
     }
 }
 
@@ -71,7 +69,7 @@ extension BaseCollectionCell: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: baseCell, for: indexPath) as! BaseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BaseCell.reuseIdentifier, for: indexPath) as! BaseCell
         return cell
     }
     

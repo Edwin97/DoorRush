@@ -10,10 +10,8 @@ import UIKit
 
 class CategoryCollectionCell: BaseCollectionCell {
     
-    var activityController: ActivityController?
-    
     let categories = [
-        Category(imageName: "burger", title: "Burger"),
+        Category(imageName: "burger", title: "Burgers"),
         Category(imageName: "paella", title: "Paella"),
         Category(imageName: "pizza", title: "Pizza"),
         Category(imageName: "vegan", title: "Vegan"),

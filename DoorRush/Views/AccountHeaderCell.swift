@@ -21,8 +21,7 @@ class AccountHeaderCell: BaseCell {
         addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: topAnchor),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             headerLabel.rightAnchor.constraint(equalTo: rightAnchor),
         ])

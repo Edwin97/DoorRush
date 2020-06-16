@@ -22,7 +22,7 @@ class FilterCell: BaseCell {
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(named: "deafaultGrey")
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "TTNorms-Regular", size: 16)
+        button.titleLabel?.font = UIFont.medium(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
         button.addTarget(self, action: #selector(enableFilter), for: .touchUpInside)

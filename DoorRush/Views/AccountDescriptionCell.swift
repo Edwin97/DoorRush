@@ -62,11 +62,11 @@ class AccountDescriptionCell: BaseCell {
     
     override func layoutSubviews() {
         NSLayoutConstraint.activate([
-            nextImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nextImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             nextImageView.leftAnchor.constraint(equalTo: stackView.rightAnchor, constant: 16),
             nextImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             stackView.rightAnchor.constraint(equalTo: nextImageView.leftAnchor, constant: -20),
             

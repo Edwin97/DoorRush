@@ -29,8 +29,8 @@ class AccountBasicCell: BaseCell {
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -46,21 +46,17 @@ class AccountBasicCell: BaseCell {
     
     override func setupViews() {
         addSubview(stackView)
-        addSubview(nextImageView)
         addSubview(separatorView)
         
         stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(nextImageView)
     }
     
     override func layoutSubviews() {
         NSLayoutConstraint.activate([
-            nextImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nextImageView.leftAnchor.constraint(equalTo: stackView.rightAnchor, constant: 16),
-            nextImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            stackView.rightAnchor.constraint(equalTo: nextImageView.leftAnchor, constant: -20),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             
             separatorView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             separatorView.rightAnchor.constraint(equalTo: rightAnchor),

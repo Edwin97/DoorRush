@@ -22,9 +22,11 @@ class CategoryCell: BaseCell {
             if self.isSelected {
                 categoryImage.image = UIImage(named: "\(category!.imageName)-tap")
                 titleLabel.textColor = UIColor(named: "red")
+                titleLabel.font = UIFont.bold(ofSize: 15)
             } else {
                 categoryImage.image = UIImage(named: category!.imageName)
                 titleLabel.textColor = UIColor(named: "grey")
+                titleLabel.font = UIFont.medium(ofSize: 15)
             }
         }
     }
@@ -40,7 +42,7 @@ class CategoryCell: BaseCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "TTNorms-Regular", size: 14)
+        label.font = UIFont.medium(ofSize: 15)
         label.textAlignment = .center
         label.numberOfLines = 1
         return label

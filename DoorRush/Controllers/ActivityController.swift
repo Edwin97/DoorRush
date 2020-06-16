@@ -16,7 +16,7 @@ class ActivityController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
-        setupCollectionView()
+        configureCollectionView()
         registerCell()
     }
     
@@ -27,7 +27,7 @@ class ActivityController: UIViewController {
         collectionView?.register(RestaurantCollectionCell.self, forCellWithReuseIdentifier: RestaurantCollectionCell.reuseIdentifier)
     }
     
-    func setupCollectionView() {
+    func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         
@@ -73,9 +73,7 @@ class ActivityController: UIViewController {
         horizontalStackView.axis = .vertical
         horizontalStackView.spacing = 0
         
-        
         navigationItem.titleView = horizontalStackView
- 
     }
     
     @objc func setLocation() {

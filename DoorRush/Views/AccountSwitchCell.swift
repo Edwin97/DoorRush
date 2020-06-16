@@ -48,7 +48,6 @@ class AccountSwitchCell: BaseCell {
         
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(switchButton)
-        
     }
     
     override func layoutSubviews() {
@@ -57,7 +56,7 @@ class AccountSwitchCell: BaseCell {
            
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
                 
             separatorView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             separatorView.rightAnchor.constraint(equalTo: rightAnchor),

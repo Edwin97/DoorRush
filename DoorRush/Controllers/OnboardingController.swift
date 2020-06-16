@@ -88,12 +88,11 @@ class OnboardingController: UIViewController {
         stackView.addArrangedSubview(signInButton)
         stackView.addArrangedSubview(signUpButton)
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = .white
-        
+        configureCollectionView()
         registerCell()
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
@@ -103,6 +102,12 @@ class OnboardingController: UIViewController {
             signInButton.heightAnchor.constraint(equalToConstant: 45),
             signUpButton.heightAnchor.constraint(equalToConstant: 45),
         ])
+    }
+    
+    func configureCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = .white
     }
     
     func registerCell() {
