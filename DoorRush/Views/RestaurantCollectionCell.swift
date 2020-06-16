@@ -10,7 +10,6 @@ import UIKit
 
 class RestaurantCollectionCell: BaseCollectionCell {
     
-    let destinationCell = "destinationCell"
     let restaurants = [
        Restuarant(imageName: "pizzas", name: "Eataly", feature: "20 min · Free delivery"),
        Restuarant(imageName: "burgers", name: "Sam's Crispy Chicken", feature: "20 min · Free delivery"),
@@ -75,7 +74,7 @@ class RestaurantCollectionCell: BaseCollectionCell {
     }
     
     override func registerClass() {
-        collectionView.register(RestaurantCell.self, forCellWithReuseIdentifier: destinationCell)
+        collectionView.register(RestaurantCell.self, forCellWithReuseIdentifier: RestaurantCell.reuseIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,7 +82,7 @@ class RestaurantCollectionCell: BaseCollectionCell {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: destinationCell, for: indexPath) as! RestaurantCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestaurantCell.reuseIdentifier, for: indexPath) as! RestaurantCell
         cell.restaurant = restaurants[indexPath.item]
         return cell
     }

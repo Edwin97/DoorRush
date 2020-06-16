@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		E830DD31248E6D5500D76511 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */; };
 		E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */; };
 		E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD34248E81BB00D76511 /* AccountBasicCell.swift */; };
-		E830DD3F248F86E400D76511 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830DD3E248F86E400D76511 /* MenuBar.swift */; };
 		E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C802486C27D007587E7 /* AppDelegate.swift */; };
 		E8527C832486C27D007587E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C822486C27D007587E7 /* SceneDelegate.swift */; };
 		E8527C852486C27D007587E7 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8527C842486C27D007587E7 /* ActivityController.swift */; };
@@ -22,6 +21,7 @@
 		E8585C6C248A501300467E4E /* Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8585C6B248A501300467E4E /* Onboard.swift */; };
 		E87E6155249270110078C73C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E6154249270110078C73C /* SearchCell.swift */; };
 		E87E615724939EA80078C73C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87E615624939EA80078C73C /* GoogleService-Info.plist */; };
+		E885304D2498861800F27EB9 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885304C2498861800F27EB9 /* ReuseIdentifying.swift */; };
 		E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */; };
 		E8C7CCD8248A9B9000529A02 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD7248A9B9000529A02 /* SignInController.swift */; };
 		E8C7CCDA248A9BB300529A02 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD9248A9BB300529A02 /* SignUpController.swift */; };
@@ -58,7 +58,6 @@
 		E830DD30248E6D5500D76511 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderCell.swift; sourceTree = "<group>"; };
 		E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionCell.swift; sourceTree = "<group>"; };
 		E830DD34248E81BB00D76511 /* AccountBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBasicCell.swift; sourceTree = "<group>"; };
-		E830DD3E248F86E400D76511 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuBar.swift; path = ../../../MenuBar.swift; sourceTree = "<group>"; };
 		E8527C7D2486C27D007587E7 /* DoorRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorRush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8527C802486C27D007587E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8527C822486C27D007587E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		E8585C6B248A501300467E4E /* Onboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard.swift; sourceTree = "<group>"; };
 		E87E6154249270110078C73C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		E87E615624939EA80078C73C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E885304C2498861800F27EB9 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		E8C7CCD5248A98BA00529A02 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		E8C7CCD7248A9B9000529A02 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		E8C7CCD9248A9BB300529A02 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 				A5D6CCC2B0E3339CB402431D /* Pods-DoorRush.debug.xcconfig */,
 				419F568AAE02DF9D86EFE245 /* Pods-DoorRush.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,7 +209,6 @@
 				E830DD32248E6E3400D76511 /* AccountDescriptionCell.swift */,
 				E830DD34248E81BB00D76511 /* AccountBasicCell.swift */,
 				E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */,
-				E830DD3E248F86E400D76511 /* MenuBar.swift */,
 				E8D8BD9424912AE6005A8C8C /* OrderCell.swift */,
 				E87E6154249270110078C73C /* SearchCell.swift */,
 			);
@@ -239,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E44E62248AB8AF007B7ABE /* Font.swift */,
+				E885304C2498861800F27EB9 /* ReuseIdentifying.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -378,6 +377,7 @@
 				E830DD33248E6E3400D76511 /* AccountDescriptionCell.swift in Sources */,
 				E8D8BD9524912AE6005A8C8C /* OrderCell.swift in Sources */,
 				E8DCCDCC2487822A00513C69 /* FliterCell.swift in Sources */,
+				E885304D2498861800F27EB9 /* ReuseIdentifying.swift in Sources */,
 				E8DCCDBA2486D06100513C69 /* OrderController.swift in Sources */,
 				E8DCCDC22486E56700513C69 /* BaseCell.swift in Sources */,
 				E8E44E63248AB8AF007B7ABE /* Font.swift in Sources */,
@@ -385,7 +385,6 @@
 				E8DCCDC42486E5E700513C69 /* CategoryCollectionCell.swift in Sources */,
 				E8585C6A248A36F800467E4E /* OnboardingController.swift in Sources */,
 				E8E44E65248AC650007B7ABE /* AccountController.swift in Sources */,
-				E830DD3F248F86E400D76511 /* MenuBar.swift in Sources */,
 				E8C7CCD6248A98BA00529A02 /* OnboardingCell.swift in Sources */,
 				E8DCCDB82486D04A00513C69 /* SearchController.swift in Sources */,
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,

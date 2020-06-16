@@ -12,12 +12,6 @@ class ActivityController: UIViewController {
     
     var collectionView: UICollectionView?
     
-    let baseCell = "baseCell"
-    let categoryCollectionCell = "categoryCollectionCell"
-    let filterCollectionCell = "filterCollectionCell"
-    let featuredCollectionCell = "featuredCollectionCell"
-    let destinationCollectionCell = "destinationCollectionCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +21,10 @@ class ActivityController: UIViewController {
     }
     
     func registerCell() {
-        collectionView?.register(BaseCollectionCell.self, forCellWithReuseIdentifier: baseCell)
-        collectionView?.register(CategoryCollectionCell.self, forCellWithReuseIdentifier: categoryCollectionCell)
-        collectionView?.register(FilterCollectionCell.self, forCellWithReuseIdentifier: filterCollectionCell)
-        collectionView?.register(FeaturedCollectionCell.self, forCellWithReuseIdentifier: featuredCollectionCell)
-        collectionView?.register(RestaurantCollectionCell.self, forCellWithReuseIdentifier: destinationCollectionCell)
+        collectionView?.register(CategoryCollectionCell.self, forCellWithReuseIdentifier: CategoryCollectionCell.reuseIdentifier)
+        collectionView?.register(FilterCollectionCell.self, forCellWithReuseIdentifier: FilterCollectionCell.reuseIdentifier)
+        collectionView?.register(FeaturedCollectionCell.self, forCellWithReuseIdentifier: FeaturedCollectionCell.reuseIdentifier)
+        collectionView?.register(RestaurantCollectionCell.self, forCellWithReuseIdentifier: RestaurantCollectionCell.reuseIdentifier)
     }
     
     func setupCollectionView() {
@@ -100,20 +93,20 @@ extension ActivityController: UICollectionViewDataSource, UICollectionViewDelega
         
         
         if indexPath.item == 0 {
-             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCollectionCell, for: indexPath) as! CategoryCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.reuseIdentifier, for: indexPath) as! CategoryCollectionCell
             return cell
           } else if indexPath.item == 1 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filterCollectionCell, for: indexPath) as! FilterCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCollectionCell.reuseIdentifier, for: indexPath) as! FilterCollectionCell
                           return cell
           } else if indexPath.item == 2 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: featuredCollectionCell, for: indexPath) as!  FeaturedCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCollectionCell.reuseIdentifier, for: indexPath) as!  FeaturedCollectionCell
                           return cell
           } else if indexPath.item == 3 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: destinationCollectionCell, for: indexPath) as! RestaurantCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestaurantCollectionCell.reuseIdentifier, for: indexPath) as! RestaurantCollectionCell
                           return cell
           }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCollectionCell, for: indexPath) as! CategoryCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.reuseIdentifier, for: indexPath) as! CategoryCollectionCell
         return cell
     }
     

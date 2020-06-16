@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingCell: UICollectionViewCell {
+class OnboardingCell: UICollectionViewCell, ReuseIdentifying{
     
     var onBoard: OnBoard? {
         didSet {

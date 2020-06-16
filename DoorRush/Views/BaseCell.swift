@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCell: UICollectionViewCell {
+class BaseCell: UICollectionViewCell, ReuseIdentifying {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

@@ -10,7 +10,6 @@ import UIKit
 
 class FeaturedCollectionCell: BaseCollectionCell {
     
-    let featuredCell = "featuredCell"
     let features = ["featured-1","featured-2","featured-3"]
     
     lazy var pageControl: UIPageControl = {
@@ -36,14 +35,9 @@ class FeaturedCollectionCell: BaseCollectionCell {
         super.setupViews()
         contentView.backgroundColor = .white
         
-//        addSubview(stackView)
         addSubview(collectionView)
-              addSubview(pageControl)
-//        addSubview(pageControl)
-//
-//        stackView.addArrangedSubview(collectionView)
-//        stackView.addArrangedSubview(pageControl)
-
+        addSubview(pageControl)
+        
         collectionView.isPagingEnabled = true
         
         NSLayoutConstraint.activate([
@@ -57,17 +51,13 @@ class FeaturedCollectionCell: BaseCollectionCell {
             
             pageControl.leftAnchor.constraint(equalTo: leftAnchor),
             pageControl.rightAnchor.constraint(equalTo: rightAnchor),
-            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
+            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             pageControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
-
-        collectionView.constraints.forEach { (constraints) in
-            print("checked \(constraints.firstAnchor) \n")
-        }
     }
     
     override func registerClass() {
-        collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: featuredCell)
+        collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,7 +65,7 @@ class FeaturedCollectionCell: BaseCollectionCell {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: featuredCell, for: indexPath) as! FeaturedCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCell.reuseIdentifier, for: indexPath) as! FeaturedCell
         cell.imageName = features[indexPath.item]
         return cell
     }

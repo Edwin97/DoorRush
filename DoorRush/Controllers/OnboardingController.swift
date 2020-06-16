@@ -10,7 +10,6 @@ import UIKit
 
 class OnboardingController: UIViewController {
     
-    let onBroadCell = "onBroadCell"
     let onBoards = [OnBoard(imageName: "onboard1", title: "Become a Dasher", description: "As a delivery driver, you'll make reliable money—working anytime, anywhere."),
                     OnBoard(imageName: "onboard2", title: "Become a Partner", description: "Grow your business and reach new customers by partnering with us."),
                     OnBoard(imageName: "onboard3", title: "Try the App", description: "Get the leading DoorRush experience with live order tracking."),
@@ -107,7 +106,7 @@ class OnboardingController: UIViewController {
     }
     
     func registerCell() {
-        collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: onBroadCell)
+        collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: OnboardingCell.reuseIdentifier)
     }
     
     @objc func toSignIn() {
@@ -140,7 +139,7 @@ extension OnboardingController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: onBroadCell, for: indexPath) as! OnboardingCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCell.reuseIdentifier, for: indexPath) as! OnboardingCell
         cell.onBoard = onBoards[indexPath.item]
         return cell
     }

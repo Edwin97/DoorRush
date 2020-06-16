@@ -10,7 +10,6 @@ import UIKit
 
 class FilterCollectionCell: BaseCollectionCell {
     
-    let filterCell = "filterCell"
     let filters = ["Over 4.5", "Under 30 min", "Vegetarian", "$, $$"
     ]
     
@@ -20,7 +19,7 @@ class FilterCollectionCell: BaseCollectionCell {
     }
     
     override func registerClass() {
-        collectionView.register(FilterCell.self, forCellWithReuseIdentifier: filterCell)
+        collectionView.register(FilterCell.self, forCellWithReuseIdentifier: FilterCell.reuseIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,7 +27,7 @@ class FilterCollectionCell: BaseCollectionCell {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filterCell, for: indexPath) as! FilterCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.reuseIdentifier, for: indexPath) as! FilterCell
         cell.filter = filters[indexPath.item]
         return cell
     }

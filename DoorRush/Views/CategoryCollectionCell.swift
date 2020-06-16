@@ -12,7 +12,6 @@ class CategoryCollectionCell: BaseCollectionCell {
     
     var activityController: ActivityController?
     
-    let categoryCell = "categoryCell"
     let categories = [
         Category(imageName: "burger", title: "Burger"),
         Category(imageName: "paella", title: "Paella"),
@@ -28,7 +27,7 @@ class CategoryCollectionCell: BaseCollectionCell {
     }
     
     override func registerClass() {
-        collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: categoryCell)
+        collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,7 +35,7 @@ class CategoryCollectionCell: BaseCollectionCell {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCell, for: indexPath) as! CategoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifier, for: indexPath) as! CategoryCell
         cell.category = categories[indexPath.item]
         return cell
     }

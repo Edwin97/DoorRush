@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCollectionCell: UICollectionViewCell {
+class BaseCollectionCell: UICollectionViewCell, ReuseIdentifying {
     
     let baseCell = "baseCell"
     
