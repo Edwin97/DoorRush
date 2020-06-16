@@ -189,7 +189,11 @@ class SignUpController: UIViewController {
     }
     
     func setupBarItems() {
-        self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
+        if self.parent != nil{
+            self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
+        }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(onSkip))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -218,18 +222,13 @@ class SignUpController: UIViewController {
     @objc private func filterApply(segment: UISegmentedControl) -> Void {
         switch segment.selectedSegmentIndex {
         case 0:
-            pushTo(viewController: SignInController())
+            remove()
+            add(SignInController())
         case 1:
-            pushTo(viewController: SignUpController())
+            remove()
+            add(SignUpController())
         default:
             onSignIn()
         }
     }
-    
-    // TODO fix 
-    func pushTo(viewController: UIViewController) {
-        viewController.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(viewController, animated: false)
-    }
-    
 }
