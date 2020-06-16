@@ -12,7 +12,13 @@ Purpose of this repo is to show how ViewControllers can be managed.
 <img src="screenshot.gif" alt="Screenshot of DoorRush iOS App" />
 </h3>
 
-## Getting Started
+# Installation
+## CocoaPods
+To install the dependencies, simply run the following line:
+
+```ruby
+pod install
+```
 
 
 
