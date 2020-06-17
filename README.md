@@ -24,7 +24,7 @@ pod install
 
 This project is written in Swift 5.0 and requires Xcode 11.5 or newer to build and run.
 
-Youtube iOS Template is compatible with iOS 13.5+.
+DoorRush iOS app is compatible with iOS 13.5+.
 
 ## Author
 
