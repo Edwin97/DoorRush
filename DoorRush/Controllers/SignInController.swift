@@ -87,6 +87,7 @@ class SignInController: UIViewController {
         button.layer.cornerRadius = 5
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return button
     }()
     
@@ -101,6 +102,7 @@ class SignInController: UIViewController {
         button.adjustsImageWhenHighlighted = false
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
         button.layer.cornerRadius = 5
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return button
     }()
     

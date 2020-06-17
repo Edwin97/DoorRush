@@ -18,12 +18,13 @@ class RestaurantCell: BaseCell {
         }
     }
     
-    let featuredImage: UIImageView = {
+    lazy var featuredImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "foodpizza")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
         return imageView
@@ -53,38 +54,22 @@ class RestaurantCell: BaseCell {
         return stackView
     }()
     
-    let container: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    
     override func setupViews() {
         super.setupViews()
         
-        addSubview(container)
-    
-        container.addSubview(verticalStack)
+        addSubview(verticalStack)
         
         verticalStack.addArrangedSubview(featuredImage)
         verticalStack.addArrangedSubview(restaurantLabel)
         verticalStack.addArrangedSubview(featureLabel)
         
-        verticalStack.setCustomSpacing(15, after: featuredImage)
-
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: topAnchor),
-            container.bottomAnchor.constraint(equalTo: bottomAnchor),
-            container.leftAnchor.constraint(equalTo: leftAnchor),
-            container.rightAnchor.constraint(equalTo: rightAnchor),
-            container.widthAnchor.constraint(equalToConstant: frame.width),
-            
             verticalStack.topAnchor.constraint(equalTo: topAnchor),
             verticalStack.bottomAnchor.constraint(equalTo: bottomAnchor),
             verticalStack.leftAnchor.constraint(equalTo: leftAnchor),
             verticalStack.rightAnchor.constraint(equalTo: rightAnchor),
         ])
         
+        verticalStack.setCustomSpacing(15, after: featuredImage)
     }
 }

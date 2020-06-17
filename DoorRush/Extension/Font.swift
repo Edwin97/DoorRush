@@ -8,27 +8,6 @@
 
 import UIKit
 
-enum DynamicType: String {
-    case Body = "UIFontTextStyleBody"
-    case Headline = "UIFontTextStyleHeadline"
-    case Subheadline = "UIFontTextStyleSubheadline"
-    case Footnote = "UIFontTextStyleFootnote"
-    case Caption1 = "UIFontTextStyleCaption1"
-    case Caption2 = "UIFontTextStyleCaption2"
-}
-enum FontBook: String {
-    case Regular = "TTNorms-Regular"
-    case Light = "TTNorms-Light"
-    case Medium = "TTNorms-Medium"
-    case Bold = "TTNorms-Bold"
-    
-    
-    func of(style: DynamicType) -> UIFont {
-        let preferred = UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: style.rawValue)).pointSize
-        return UIFont(name: self.rawValue, size: preferred)!
-    }
-}
-
 extension UIFont {
     class func regular(ofSize size: CGFloat) -> UIFont {
         return UIFont(name: "TTNorms-Regular", size: size)!
@@ -60,5 +39,12 @@ extension UIViewController {
                 viewContoller.removeFromParent()
             }
         }
+    }
+}
+
+extension UINavigationBar {
+    func setCustomFont() {
+        titleTextAttributes = [NSAttributedString.Key.font: UIFont.bold(ofSize: 18)]
+        largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.bold(ofSize: 35)]
     }
 }

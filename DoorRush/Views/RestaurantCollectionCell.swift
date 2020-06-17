@@ -20,7 +20,7 @@ class RestaurantCollectionCell: BaseCollectionCell {
     let foodLabel: UILabel = {
        let label = UILabel()
         label.text = "National Favorites"
-        label.font = UIFont(name: "TTNorms-Bold", size: 22)
+        label.font = UIFont.bold(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
@@ -31,7 +31,7 @@ class RestaurantCollectionCell: BaseCollectionCell {
         button.setTitle("See All", for: .normal)
         button.tintColor = UIColor(named: "red")
         button.contentHorizontalAlignment = .right
-        button.titleLabel?.font = UIFont(name: "TTNorms-Regular", size: 16)
+        button.titleLabel?.font = UIFont.regular(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 100).isActive = true
         return button
@@ -57,16 +57,16 @@ class RestaurantCollectionCell: BaseCollectionCell {
         horizontalStack.addArrangedSubview(allButton)
     
         topConstraint?.isActive = false
+        bottomConstraint?.isActive = false
         
         NSLayoutConstraint.activate([
             collectionView.widthAnchor.constraint(equalToConstant: frame.width),
             
             horizontalStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             horizontalStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            horizontalStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             horizontalStack.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0),
             
-            collectionView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),

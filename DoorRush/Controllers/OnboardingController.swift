@@ -22,7 +22,7 @@ class OnboardingController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.borderColor = UIColor(named: "grey-light")?.cgColor
         button.layer.borderWidth = 2
-        button.titleLabel?.font = UIFont(name: "TTNorms-Medium", size: 16)
+        button.titleLabel?.font = UIFont.bold(ofSize: 16)
         button.addTarget(self, action: #selector(toSignIn), for: .touchUpInside)
         return button
     }()
@@ -33,7 +33,7 @@ class OnboardingController: UIViewController {
         button.backgroundColor = UIColor(named: "red")
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont(name: "TTNorms-Medium", size: 16)
+        button.titleLabel?.font = UIFont.bold(ofSize: 16)
         button.addTarget(self, action: #selector(toSignUp), for: .touchUpInside)
         return button
     }()

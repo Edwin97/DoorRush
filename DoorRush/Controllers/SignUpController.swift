@@ -97,7 +97,7 @@ class SignUpController: UIViewController {
      let termLabel: UILabel = {
         let label = UILabel()
         label.text = "By tapping Sign Up, Continue with Facebook, Continue with Google, you agree to our Terms and Conditions and Privacy Statement"
-        label.font = UIFont.medium(ofSize: 13)
+        label.font = UIFont.medium(ofSize: 14)
         label.textAlignment = .center
         label.textColor = UIColor(named: "grey")
         label.textAlignment =  .left
@@ -125,6 +125,7 @@ class SignUpController: UIViewController {
         button.layer.cornerRadius = 5
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return button
     }()
     
@@ -139,6 +140,7 @@ class SignUpController: UIViewController {
         button.adjustsImageWhenHighlighted = false
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
         button.layer.cornerRadius = 5
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return button
     }()
     

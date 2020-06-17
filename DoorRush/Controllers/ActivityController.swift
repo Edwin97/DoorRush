@@ -48,23 +48,23 @@ class ActivityController: UIViewController {
         let locationButton = UIButton()
         
         titleLabel.text = "Delivering to".uppercased()
-        titleLabel.font = UIFont(name: "TTNorms-Bold", size: 10)
+        titleLabel.font = UIFont.bold(ofSize: 10)
         titleLabel.textColor = UIColor(named: "red")
         
         locationButton.setTitle("Pie Guys Of New York", for: .normal)
         locationButton.setTitleColor(.black, for: .normal)
         locationButton.backgroundColor = .white
-        locationButton.titleLabel?.font = UIFont(name: "TTNorms-Medium", size: 18)
+        locationButton.titleLabel?.font = UIFont.bold(ofSize: 18)
         locationButton.addTarget(self, action: #selector(setLocation), for: .touchUpInside)
         locationButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
         if let arrowDown = UIImage(systemName: "chevron.down")?.withRenderingMode(.alwaysTemplate){
-          locationButton.setImage(arrowDown, for: .normal)
+            locationButton.setImage(arrowDown, for: .normal)
             locationButton.tintColor = UIColor(named: "red")
         }
         
         locationButton.imageView?.contentMode = .scaleAspectFit
-          locationButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -10)
+        locationButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -10)
         
         locationButton.semanticContentAttribute = .forceRightToLeft
         
@@ -116,6 +116,8 @@ extension ActivityController: UICollectionViewDataSource, UICollectionViewDelega
               return CGSize(width: collectionView.frame.width, height: 80)
         } else if indexPath.item == 2 {
              return CGSize(width: collectionView.frame.width, height: 190)
+        } else if indexPath.item == 3 {
+             return CGSize(width: collectionView.frame.width, height: 270)
         }
 
         return CGSize(width: collectionView.frame.width, height: 300)

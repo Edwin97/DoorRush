@@ -16,6 +16,7 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
         navigationController?.navigationBar.prefersLargeTitles = true
         
         collectionView.backgroundColor = .white
+        navigationController?.navigationBar.setCustomFont()
         
         collectionView.register(OrderCell.self, forCellWithReuseIdentifier: "OrderCell")
     }

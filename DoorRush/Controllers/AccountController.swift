@@ -10,24 +10,21 @@ import UIKit
 
 class AccountController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let accountSwitchCell = "accountSwitchCell"
-    let accountDescriptionCell = "accountDescriptionCell"
-    let accountBasicCell = "accountBasicCell"
-    let accountHeaderCell = "accountHeaderCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         navigationItem.title = "Account"
         navigationController?.navigationBar.prefersLargeTitles = true
         collectionView.backgroundColor = .white
+        
+        navigationController?.navigationBar.setCustomFont()
     }
     
     func registerCell() {
-        collectionView.register(AccountSwitchCell.self, forCellWithReuseIdentifier: accountSwitchCell)
-        collectionView.register(AccountDescriptionCell.self, forCellWithReuseIdentifier: accountDescriptionCell)
-        collectionView.register(AccountBasicCell.self, forCellWithReuseIdentifier: accountBasicCell)
-        collectionView.register(AccountHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell)
+        collectionView.register(AccountSwitchCell.self, forCellWithReuseIdentifier: AccountSwitchCell.reuseIdentifier)
+        collectionView.register(AccountDescriptionCell.self, forCellWithReuseIdentifier: AccountDescriptionCell.reuseIdentifier)
+        collectionView.register(AccountBasicCell.self, forCellWithReuseIdentifier: AccountBasicCell.reuseIdentifier)
+        collectionView.register(AccountHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountHeaderCell.reuseIdentifier)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -49,7 +46,7 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
             UICollectionReusableView()
         }
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: accountHeaderCell, for: indexPath) as! AccountHeaderCell
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountHeaderCell.reuseIdentifier, for: indexPath) as! AccountHeaderCell
         headerView.headerLabel.text = AccountSection(rawValue: indexPath.section)?.description
           return headerView
     }
@@ -74,9 +71,9 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let basicCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountBasicCell, for: indexPath) as! AccountBasicCell
-        let descriptionCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountDescriptionCell, for: indexPath) as! AccountDescriptionCell
-        let switchCell = collectionView.dequeueReusableCell(withReuseIdentifier: accountSwitchCell, for: indexPath) as! AccountSwitchCell
+        let basicCell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountBasicCell.reuseIdentifier, for: indexPath) as! AccountBasicCell
+        let descriptionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountDescriptionCell.reuseIdentifier, for: indexPath) as! AccountDescriptionCell
+        let switchCell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountSwitchCell.reuseIdentifier, for: indexPath) as! AccountSwitchCell
         
         guard let section = AccountSection(rawValue: indexPath.section) else {
             return UICollectionViewCell()

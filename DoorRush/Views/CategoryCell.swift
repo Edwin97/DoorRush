@@ -45,6 +45,7 @@ class CategoryCell: BaseCell {
         label.font = UIFont.medium(ofSize: 15)
         label.textAlignment = .center
         label.numberOfLines = 1
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
