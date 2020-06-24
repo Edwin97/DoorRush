@@ -61,6 +61,7 @@ class SignUpController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 45).isActive = true
         textField.font = UIFont.regular(ofSize: 16)
+        textField.autocapitalizationType = .none
         return textField
     }()
     
@@ -78,6 +79,7 @@ class SignUpController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 45).isActive = true
         textField.font = UIFont.regular(ofSize: 16)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
