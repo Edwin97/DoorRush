@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInController: UIViewController {
         
@@ -171,8 +172,14 @@ class SignInController: UIViewController {
     }
     
     @objc func onSignIn() {
-        let viewController = TabBarController()
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
+        guard let email = emailTextField.text, let password = passwordTexField.text else {
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            if let error = error {
+                self?.showAlert(title: "error", message: error.localizedDescription)
+            }
+        }
     }
 }

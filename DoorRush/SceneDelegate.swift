@@ -12,6 +12,7 @@ import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var authHandler: AuthStateDidChangeListenerHandle?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,10 +22,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: OnboardingController())
+        observeAuthorisedState()
         window?.makeKeyAndVisible()
     }
-
+    
+    private func observeAuthorisedState() {
+        authHandler = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil  {
+                self.window?.rootViewController = UINavigationController(rootViewController: OnboardingController())
+            } else {
+                self.window?.rootViewController = TabBarController()
+            }
+        })
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

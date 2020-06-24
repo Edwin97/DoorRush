@@ -46,6 +46,7 @@ class CategoryCell: BaseCell {
         label.textAlignment = .center
         label.numberOfLines = 1
         label.lineBreakMode = .byWordWrapping
+        label.sizeToFit()
         return label
     }()
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -103,14 +104,23 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func logout() {
+        
         let actionSheetController: UIAlertController = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .actionSheet)
-
+        
         // create an action
         let firstAction: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive) { action -> Void in
             
-            let viewController = UINavigationController(rootViewController: OnboardingController())
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true, completion: nil)
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            
+            //            let viewController = UINavigationController(rootViewController: OnboardingController())
+            //            viewController.modalPresentationStyle = .fullScreen
+            //            self.present(viewController, animated: true) {
+            //
+            //            }
         }
 
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }

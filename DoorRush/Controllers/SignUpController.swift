@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Firebase
 
 class SignUpController: UIViewController {
     
@@ -90,7 +91,7 @@ class SignUpController: UIViewController {
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 5
         button.adjustsImageWhenHighlighted = false
-        button.addTarget(self, action: #selector(onSignIn), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -202,7 +203,13 @@ class SignUpController: UIViewController {
         self.parent?.navigationItem.rightBarButtonItem = nil
     }
     
-    @objc func onSignIn() {
+    @objc func onSignUp() {
+        guard firstNameTextField.hasText && lastNameTextField.hasText && emailTextField.hasText && passwordTexField.hasText else {
+            showAlert(title: "All fields are required", message: "Please enter the required information in every field.")
+            return
+        }
+        
+        createUserWithEmail()
     }
     
     @objc func onSkip() {
@@ -230,7 +237,24 @@ class SignUpController: UIViewController {
             remove()
             add(SignUpController())
         default:
-            onSignIn()
+            onSignUp()
+        }
+    }
+    
+    func createUserWithEmail() {
+    
+        guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text, let password = passwordTexField.text else{
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+                return
+            }
+            
+        
         }
     }
 }
