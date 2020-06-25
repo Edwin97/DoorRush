@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OrderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     override func viewDidLoad() {
@@ -21,12 +22,37 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
         collectionView.register(OrderCell.self, forCellWithReuseIdentifier: "OrderCell")
     }
     
+    func isAnonynous() -> Bool {
+        guard let user = Auth.auth().currentUser else {
+            return false
+        }
+        
+        if user.isAnonymous {
+            collectionView.setEmptyView(title: "You don't have any orders yet.", message: "Your orders will be in here.", iconImage: "empty-order")
+            return true
+        }
+        
+        return false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCell", for: indexPath) as! OrderCell
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if isAnonynous() {
+            return 0
+        }
+        
+        
         return 10
     }
     

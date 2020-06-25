@@ -26,3 +26,45 @@ extension UITextField {
         return true
     }
 }
+
+extension UICollectionView {
+    
+    func setEmptyView(title: String, message: String, iconImage: String) {
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+        
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.medium(ofSize: 20)
+        titleLabel.textAlignment = .center
+        
+        let messageLabel = UILabel()
+        messageLabel.text = message
+        messageLabel.font = UIFont.regular(ofSize: 18)
+        messageLabel.textAlignment = .center
+        
+        let iconImageView = UIImageView()
+        iconImageView.image = UIImage(named: iconImage)
+        
+        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleLabel, messageLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        
+        emptyView.addSubview(stackView)
+        
+        self.backgroundView = emptyView
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -120),
+            iconImageView.heightAnchor.constraint(equalToConstant: 200),
+            iconImageView.widthAnchor.constraint(equalToConstant: 200),
+        ])
+        
+        stackView.setCustomSpacing(10, after: iconImageView)
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+    }
+}
