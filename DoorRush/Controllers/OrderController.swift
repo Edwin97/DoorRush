@@ -11,7 +11,7 @@ import Firebase
 
 class OrderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var orders = ["Hello"]
+    var orders = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +51,13 @@ class OrderController: UICollectionViewController, UICollectionViewDelegateFlowL
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if isAnonynous() {
-                        collectionView.setAnonymousView(iconImage: "anonymous-order", title: "Let's get rushing!", message: "Sign in to manage your orders", buttonTitle: "Sign In to View Orders")
+            collectionView.setAnonymousView(iconImage: "anonymous-order", title: "Let's get rushing!", message: "Sign in to manage your orders", buttonTitle: "Sign In to View Orders")
             return 0
         } else if orders.count == 0 {
             collectionView.setEmptyView(iconImage: "empty-order", title: "You don't have any orders yet.", message: "Your orders will be in here.")
             return 0
         }
-
+        
         return 10
     }
     

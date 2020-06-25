@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIViewController {
     
@@ -28,18 +29,19 @@ extension UITextField {
 }
 
 extension UICollectionView {
-    
+
     func setEmptyView(iconImage: String, title: String, message: String) {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
         
         let titleLabel = UILabel()
         titleLabel.text = title
-        titleLabel.font = UIFont.medium(ofSize: 20)
+        titleLabel.font = UIFont.medium(ofSize: 22)
         titleLabel.textAlignment = .center
         
         let messageLabel = UILabel()
         messageLabel.text = message
-        messageLabel.font = UIFont.regular(ofSize: 22)
+        messageLabel.font = UIFont.regular(ofSize: 16)
+        messageLabel.textColor = UIColor(named: "grey")
         messageLabel.textAlignment = .center
         
         let iconImageView = UIImageView()
@@ -62,6 +64,7 @@ extension UICollectionView {
         ])
         
         stackView.setCustomSpacing(10, after: iconImageView)
+        stackView.setCustomSpacing(10, after: titleLabel)
     }
     
     func setAnonymousView(iconImage: String, title: String, message: String, buttonTitle: String) {
@@ -86,13 +89,14 @@ extension UICollectionView {
         signUpButton.titleLabel?.textColor = .white
         signUpButton.layer.cornerRadius = 5
         signUpButton.adjustsImageWhenHighlighted = false
-        signUpButton.addTarget(self, action: #selector(onSignIn), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(onSignUp), for: .touchUpInside)
         
         let loginButton = UIButton(type: .system)
         loginButton.setTitle("Already have an account? Login", for: .normal)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
         loginButton.titleLabel?.font = UIFont.bold(ofSize: 16)
+        loginButton.addTarget(self, action: #selector(onLogin), for: .touchUpInside)
         
         let iconImageView = UIImageView()
         iconImageView.image = UIImage(named: iconImage)
@@ -123,7 +127,33 @@ extension UICollectionView {
         self.backgroundView = nil
     }
     
-    @objc func onSignIn() {
-        
+    @objc func onSignUp(rootView: UIViewController) {
+        let viewController = SignUpController()
+        viewController.modalPresentationStyle = .fullScreen
+      
+    }
+    
+    @objc func onLogin() {
+        //TODO
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+}
+
+extension UIApplication {
+
+    class func getTopMostViewController() -> UIViewController? {
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        if var topController = keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        } else {
+            return nil
+        }
     }
 }
