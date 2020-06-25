@@ -29,6 +29,13 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if isAnonynous() {
+            collectionView.setAnonymousView(iconImage: "anonymous-setting", title: "Let's get rushing!", message: "Sign in to manage your setting", buttonTitle: "Sign In to View Settings")
+            return 0
+        } else {
+            collectionView.restore()
+        }
+        
         return AccountSection.allCases.count
     }
     
@@ -52,7 +59,20 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
           return headerView
     }
     
+    func isAnonynous() -> Bool {
+          guard let user = Auth.auth().currentUser else {
+              return false
+          }
+          
+          if user.isAnonymous {
+              return true
+          }
+          
+          return false
+      }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
         guard let section = AccountSection(rawValue: section) else {
             return 0
         }
@@ -115,12 +135,6 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
             } catch {
                 self.showAlert(title: "Error", message: error.localizedDescription)
             }
-            
-            //            let viewController = UINavigationController(rootViewController: OnboardingController())
-            //            viewController.modalPresentationStyle = .fullScreen
-            //            self.present(viewController, animated: true) {
-            //
-            //            }
         }
 
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }

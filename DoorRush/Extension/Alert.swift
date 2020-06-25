@@ -29,7 +29,7 @@ extension UITextField {
 
 extension UICollectionView {
     
-    func setEmptyView(title: String, message: String, iconImage: String) {
+    func setEmptyView(iconImage: String, title: String, message: String) {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
         
         let titleLabel = UILabel()
@@ -39,7 +39,7 @@ extension UICollectionView {
         
         let messageLabel = UILabel()
         messageLabel.text = message
-        messageLabel.font = UIFont.regular(ofSize: 18)
+        messageLabel.font = UIFont.regular(ofSize: 22)
         messageLabel.textAlignment = .center
         
         let iconImageView = UIImageView()
@@ -64,7 +64,66 @@ extension UICollectionView {
         stackView.setCustomSpacing(10, after: iconImageView)
     }
     
+    func setAnonymousView(iconImage: String, title: String, message: String, buttonTitle: String) {
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+    
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.bold(ofSize: 22)
+        titleLabel.textAlignment = .center
+        
+        let messageLabel = UILabel()
+        messageLabel.text = message
+        messageLabel.font = UIFont.regular(ofSize: 16)
+        messageLabel.textColor = UIColor(named: "grey")
+        messageLabel.textAlignment = .center
+
+        let signUpButton = UIButton(type: .custom)
+        signUpButton.setTitle(buttonTitle, for: .normal)
+        signUpButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        signUpButton.titleLabel?.font = UIFont.bold(ofSize: 16)
+        signUpButton.backgroundColor = .systemBlue
+        signUpButton.titleLabel?.textColor = .white
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.adjustsImageWhenHighlighted = false
+        signUpButton.addTarget(self, action: #selector(onSignIn), for: .touchUpInside)
+        
+        let loginButton = UIButton(type: .system)
+        loginButton.setTitle("Already have an account? Login", for: .normal)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        loginButton.titleLabel?.font = UIFont.bold(ofSize: 16)
+        
+        let iconImageView = UIImageView()
+        iconImageView.image = UIImage(named: iconImage)
+        
+        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleLabel, messageLabel, signUpButton, loginButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        
+        emptyView.addSubview(stackView)
+        
+        self.backgroundView = emptyView
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -120),
+            iconImageView.heightAnchor.constraint(equalToConstant: 200),
+            iconImageView.widthAnchor.constraint(equalToConstant: 200),
+            signUpButton.widthAnchor.constraint(equalToConstant: 280),
+        ])
+        
+        stackView.setCustomSpacing(10, after: iconImageView)
+        stackView.setCustomSpacing(10, after: titleLabel)
+        stackView.setCustomSpacing(25, after: messageLabel)
+    }
+    
     func restore() {
         self.backgroundView = nil
+    }
+    
+    @objc func onSignIn() {
+        
     }
 }
