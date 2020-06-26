@@ -27,6 +27,7 @@
 		E8C7CCDA248A9BB300529A02 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7CCD9248A9BB300529A02 /* SignUpController.swift */; };
 		E8D1EA7C24A393AF00EBC5A0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1EA7B24A393AF00EBC5A0 /* Alert.swift */; };
 		E8D1EA7E24A5F35F00EBC5A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1EA7D24A5F35F00EBC5A0 /* User.swift */; };
+		E8D1EA8024A61F9500EBC5A0 /* UnavailableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1EA7F24A61F9500EBC5A0 /* UnavailableController.swift */; };
 		E8D8BD932490F290005A8C8C /* AccountSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */; };
 		E8D8BD9524912AE6005A8C8C /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8BD9424912AE6005A8C8C /* OrderCell.swift */; };
 		E8DCCDB82486D04A00513C69 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCCDB72486D04A00513C69 /* SearchController.swift */; };
@@ -77,6 +78,7 @@
 		E8C7CCD9248A9BB300529A02 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		E8D1EA7B24A393AF00EBC5A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E8D1EA7D24A5F35F00EBC5A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E8D1EA7F24A61F9500EBC5A0 /* UnavailableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableController.swift; sourceTree = "<group>"; };
 		E8D8BD922490F290005A8C8C /* AccountSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSwitchCell.swift; sourceTree = "<group>"; };
 		E8D8BD9424912AE6005A8C8C /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		E8DCCDB72486D04A00513C69 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				E8C7CCD7248A9B9000529A02 /* SignInController.swift */,
 				E8C7CCD9248A9BB300529A02 /* SignUpController.swift */,
 				E8E44E64248AC650007B7ABE /* AccountController.swift */,
+				E8D1EA7F24A61F9500EBC5A0 /* UnavailableController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				E8DCCDB82486D04A00513C69 /* SearchController.swift in Sources */,
 				E8DCCDBE2486D2EE00513C69 /* TabBarController.swift in Sources */,
 				E8D1EA7C24A393AF00EBC5A0 /* Alert.swift in Sources */,
+				E8D1EA8024A61F9500EBC5A0 /* UnavailableController.swift in Sources */,
 				E8DCCDD2248788DE00513C69 /* RestaurantCollectionCell.swift in Sources */,
 				E8527C812486C27D007587E7 /* AppDelegate.swift in Sources */,
 				E830DD35248E81BB00D76511 /* AccountBasicCell.swift in Sources */,

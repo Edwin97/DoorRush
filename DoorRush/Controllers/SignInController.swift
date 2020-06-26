@@ -67,6 +67,7 @@ class SignInController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
+        button.addTarget(self, action: #selector(onForgot), for: .touchUpInside)
         return button
     }()
     
@@ -185,5 +186,11 @@ class SignInController: UIViewController {
                 self?.showAlert(title: "error", message: error.localizedDescription)
             }
         }
+    }
+    
+    @objc func onForgot() {
+        let viewController = UnavailableController()
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
