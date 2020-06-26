@@ -14,14 +14,14 @@ class SignUpController: UIViewController {
     
     let firstNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "First Name"
+        label.text = "Username"
         label.font = UIFont.medium(ofSize: 13)
         return label
     }()
     
-    let firstNameTextField: UITextField = {
+    let usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "First Name"
+        textField.placeholder = "Username"
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 45).isActive = true
@@ -29,16 +29,16 @@ class SignUpController: UIViewController {
         return textField
     }()
     
-    let lastNameLabel: UILabel = {
+    let phoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "Last Name"
+        label.text = "Phone Number"
         label.font = UIFont.medium(ofSize: 13)
         return label
     }()
     
-    let lastNameTextField: UITextField = {
+    let phoneTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Last Name"
+        textField.placeholder = "Phone Number"
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 45).isActive = true
@@ -171,9 +171,9 @@ class SignUpController: UIViewController {
         stackView.addArrangedSubview(facebookButton)
         stackView.addArrangedSubview(divideLabel)
         stackView.addArrangedSubview(firstNameLabel)
-        stackView.addArrangedSubview(firstNameTextField)
-        stackView.addArrangedSubview(lastNameLabel)
-        stackView.addArrangedSubview(lastNameTextField)
+        stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(phoneLabel)
+        stackView.addArrangedSubview(phoneTextField)
         stackView.addArrangedSubview(emailLabel)
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordLabel)
@@ -206,7 +206,7 @@ class SignUpController: UIViewController {
     }
     
     @objc func onSignUp() {
-        guard firstNameTextField.hasText && lastNameTextField.hasText && emailTextField.hasText && passwordTexField.hasText else {
+        guard usernameTextField.hasText && phoneTextField.hasText && emailTextField.hasText && passwordTexField.hasText else {
             showAlert(title: "All fields are required", message: "Please enter the required information in every field.")
             return
         }
@@ -215,9 +215,12 @@ class SignUpController: UIViewController {
     }
     
     @objc func onSkip() {
-        
         Auth.auth().signInAnonymously() { (authResult, error) in
-          // ...
+            
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -245,8 +248,7 @@ class SignUpController: UIViewController {
     }
     
     func createUserWithEmail() {
-    
-        guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text, let password = passwordTexField.text else{
+        guard let username = usernameTextField.text, let phone = phoneTextField.text, let email = emailTextField.text, let password = passwordTexField.text else{
             return
         }
         
@@ -257,7 +259,20 @@ class SignUpController: UIViewController {
                 return
             }
             
+            if let auth = authResult {
+                self.addUserDocument(userId: auth.user.uid, username: username, email: email, phone: phone)
+            }
+        }
+    }
+    
+    func addUserDocument(userId: String, username: String, email: String, phone: String) {
+        let db = Firestore.firestore()
         
+        db.collection("users").addDocument(data: ["userId": userId, "username": username, "email": email, "phoneNumber": phone]) { (error) in
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+                return
+            }
         }
     }
 }
