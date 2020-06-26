@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class SignUpController: UIViewController {
     
@@ -85,7 +86,7 @@ class SignUpController: UIViewController {
     
     let signInButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Sign In", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
@@ -119,7 +120,7 @@ class SignUpController: UIViewController {
     
     let googleButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Sign In with Google", for: .normal)
+        button.setTitle("Continue with Google", for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
         button.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -129,12 +130,13 @@ class SignUpController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.titleLabel?.font = UIFont.bold(ofSize: 16)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(googleSignin), for: .touchUpInside)
         return button
     }()
     
     let facebookButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Sign In with Facebook", for: .normal)
+        button.setTitle("Continue with Facebook", for: .normal)
         button.setImage(UIImage(named: "facebook"), for: .normal)
         button.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -161,6 +163,10 @@ class SignUpController: UIViewController {
         setupViews()
         setupPageSegment()
         setupBarItems()
+        
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     }
     
     func setupViews() {
@@ -205,6 +211,10 @@ class SignUpController: UIViewController {
         self.parent?.navigationItem.rightBarButtonItem = nil
     }
     
+    @objc func googleSignin() {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
     @objc func onSignUp() {
         guard usernameTextField.hasText && phoneTextField.hasText && emailTextField.hasText && passwordTexField.hasText else {
             showAlert(title: "All fields are required", message: "Please enter the required information in every field.")
@@ -216,7 +226,6 @@ class SignUpController: UIViewController {
     
     @objc func onSkip() {
         Auth.auth().signInAnonymously() { (authResult, error) in
-            
             
             if let error = error {
                 print(error.localizedDescription)
@@ -274,5 +283,44 @@ class SignUpController: UIViewController {
                 return
             }
         }
+    }
+}
+
+extension SignUpController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("Google Sing In didSignInForUser")
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
+        // When user is signed in
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if let error = error {
+                print("Login error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let user = user {
+                self.addUserDocument(userId: user.user.uid, username: user.user.displayName ?? "", email: user.user.email ?? "", phone: user.user.phoneNumber ?? "")
+            }
+        
+        })
+    }
+    
+    // Start Google OAuth2 Authentication
+    func sign(_ signIn: GIDSignIn?, present viewController: UIViewController?) {
+        
+        // Showing OAuth2 authentication window
+        if let aController = viewController {
+            present(aController, animated: true) {() -> Void in }
+        }
+    }
+    
+    // After Google OAuth2 authentication
+    func sign(_ signIn: GIDSignIn?, dismiss viewController: UIViewController?) {
+        // Close OAuth2 authentication window
+        dismiss(animated: true) {() -> Void in }
     }
 }
