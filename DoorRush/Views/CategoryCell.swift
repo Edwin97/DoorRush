@@ -20,15 +20,17 @@ class CategoryCell: BaseCell {
     override var isSelected: Bool {
         didSet {
             if self.isSelected {
-                categoryImage.image = UIImage(named: "\(category!.imageName)-tap")
-                titleLabel.textColor = UIColor(named: "red")
-                titleLabel.font = UIFont.bold(ofSize: 15)
+                categoryView(imageName: "\(category!.imageName)-tap", colorName: "red", fontSize: 15)
             } else {
-                categoryImage.image = UIImage(named: category!.imageName)
-                titleLabel.textColor = UIColor(named: "grey")
-                titleLabel.font = UIFont.medium(ofSize: 15)
+                categoryView(imageName: category!.imageName, colorName: "grey", fontSize: 15)
             }
         }
+    }
+    
+    func categoryView(imageName: String, colorName: String, fontSize: CGFloat) {
+        categoryImage.image = UIImage(named: imageName)
+        titleLabel.textColor = UIColor(named: colorName)
+        titleLabel.font = UIFont.medium(ofSize: fontSize)
     }
     
     let categoryImage: UIImageView = {
