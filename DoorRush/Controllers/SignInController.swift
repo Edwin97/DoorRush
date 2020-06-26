@@ -174,7 +174,9 @@ class SignInController: UIViewController {
     }
     
     @objc func onSignIn() {
-        guard let email = emailTextField.text, let password = passwordTexField.text else {
+                
+        guard let email = emailTextField.text, let password = passwordTexField.text, emailTextField.hasText, passwordTexField.hasText else {
+            showAlert(title: "All fields are required", message: "Please enter the required information in every field.")
             return
         }
         

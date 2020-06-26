@@ -30,7 +30,7 @@ class AccountController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         if isAnonynous() {
-            collectionView.setAnonymousView(iconImage: "anonymous-setting", title: "Let's get rushing!", message: "Sign in to manage your setting", buttonTitle: "Sign In to View Settings")
+            collectionView.setAnonymousView(iconImage: "anonymous-setting", title: "Let's get rushing!", message: "Sign in to manage your setting", buttonTitle: "Sign Up to View Settings")
             return 0
         } else {
             collectionView.restore()
