@@ -1,4 +1,4 @@
- # DoorRush iOS App
+ # DoorRush
 
 [![License](http://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://github.com/Edwin97/DoorRush/blob/master/LICENSE)
 [![Swift 5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org)
